@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  driver_id: MyString
+  integer: MyString
+  product_id: 1
+  quantity: 1
+  DateTime: 2016-07-24 22:20:54
+  status_id: MyText
+
+two:
+  user_id: 1
+  driver_id: MyString
+  integer: MyString
+  product_id: 1
+  quantity: 1
+  DateTime: 2016-07-24 22:20:54
+  status_id: MyText
