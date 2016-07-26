@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'paperclip', "~> 5.0.0"
+
 gem 'sprockets'
 gem 'sprockets-es6', require: 'sprockets/es6'
 
