@@ -10,7 +10,7 @@
 user1 = User.create(
 	first_name: 'Daniel', 
 	last_name: 'Barenboim',
-	driver_license: 'url_to_image',
+	driver_license: '',
 	license_url: 'image_url', 
 	address: '1077 se 6th ave, Dania Beach, Fl 33004',
 	phone: '305-414-9776',
@@ -23,8 +23,7 @@ user1 = User.create(
 user2 = User.create(
 	first_name: 'Morgan', 
 	last_name: 'Freeman',
-	driver_license: 'url_to_image',
-	license_url: 'image_url', 
+	driver_license: 'B651-169-92-140-0',
 	address: '350 S Miami Ave apt 3402, Miami, Fl 33130',
 	phone: '954 554 9364',
 	birthday: 1937-06-01,
@@ -36,7 +35,7 @@ user2 = User.create(
 user3 = User.create(
 	first_name: 'Elon', 
 	last_name: 'Musk',
-	driver_license: 'url_to_image',
+	driver_license: '',
 	license_url: 'image_url',
 	address: '120 SW 8th St, Miami, FL 33130',
 	phone: '305-718-1446',
