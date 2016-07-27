@@ -4,8 +4,18 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -30,6 +40,31 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+      <%= f.label :driver_license %><br />
+      <%= f.text_field :driver_license, autofocus: true %>
+    </div>  
+
+    <div class="field">
+      <%= f.label :avatar %><br />
+      <%= f.file_field :avatar, as: :file, autofocus: true %>
+    </div>  
+
+    <div class="field">
+      <%= f.label :address %><br />
+      <%= f.text_field :address, autofocus: true %>
+    </div>  
+
+    <div class="field">
+      <%= f.label :phone %><br />
+      <%= telephone_field :phone, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :birthday %><br />
+      <%= f.date_field :birthday, autofocus: true %>
+    </div>
 
   <div class="actions">
     <%= f.submit "Update" %>

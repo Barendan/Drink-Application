@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
 
-	def home
-		@name = current_user ? @current_user.username : "Guest"
-	end
-
-	def index
-		@allUsers = User.all
+	# Do I need this?
+	def new
+		@user = User.new
 	end
 
 	def create
@@ -15,6 +12,48 @@ class UsersController < ApplicationController
 		else
 			redirect_to new_user_registration_path
 		end
+	end
+	# Post sign-in welcome page
+	def home
+		@user = current_user ? @current_user.username : "Guest"
+	end
+
+	# user account page 
+	def show
+
+	end
+
+	# edit account info page
+	def edit
+		@user = User.find(params[:id])
+	end
+	# patch edit page
+	def update
+		respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    	end
+	end
+
+	# delete account button
+	def destroy
+		@user.destroy
+	    respond_to do |format|
+	      format.html { redirect_to users_url, notice: 'Sser was successfully destroyed.' }
+	      format.json { head :no_content }
+	    end
+	end
+
+
+
+	# Admin only 
+	def index
+		@allUsers = User.all
 	end
 
 	private
