@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
 	# Admin only 
 	def index
-		@allUsers = User.all
+		@usersArr = User.all
 	end
 
 	private

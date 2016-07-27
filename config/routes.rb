@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :orders
-  resources :products
+  resources :products, only: [:index]
 
 
 end
