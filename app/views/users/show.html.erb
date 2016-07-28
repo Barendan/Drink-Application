@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<% @usersArr.each do |user| %>
+	<%= user.first_name %>
+	<%= user.last_name %>
+	<%= user.email %>
+	<%= user.password %>
+
+	<%= user.driver_license %>
+	<%= user.avatar %>
+	<%= user.address %>
+	<%= user.phone %>
+	<%= user.birthday %>
+	<%= user.driver %>
+	<%= user.vip %>
+	<%= user.verified %>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user.id) %> |
+<%= link_to 'Back', users_path %>

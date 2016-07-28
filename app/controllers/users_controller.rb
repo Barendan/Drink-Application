@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :authorize_user, except: [:index, :create]
 	before_action :admin_only, only: [:index]
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	# Is devise already doing this?
 	def create
@@ -54,7 +55,7 @@ class UsersController < ApplicationController
 	def index
 		usersArr = User.all
 
-		@userNameArr = usersarr.each do |user|
+		@userNameArr = usersArr.each do |user|
 			user.first_name + " " + user.last_name
 		end
 	end
@@ -70,6 +71,10 @@ class UsersController < ApplicationController
 		:phone
 		:birthday
 		)
+	end
+
+	def set_user
+		@user = User.find(params[:id])
 	end
 
 end
