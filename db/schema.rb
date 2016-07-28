@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726193722) do
+ActiveRecord::Schema.define(version: 20160728160045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,12 +70,12 @@ ActiveRecord::Schema.define(version: 20160726193722) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                    default: "",    null: false
+    t.string   "encrypted_password",       default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",            default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -83,17 +83,16 @@ ActiveRecord::Schema.define(version: 20160726193722) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "driver_license"
-    t.string   "license_url"
     t.string   "address"
     t.string   "phone"
     t.date     "birthday"
-    t.boolean  "driver",                 default: false
-    t.boolean  "vip",                    default: false
-    t.boolean  "verified",               default: false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.boolean  "driver",                   default: false
+    t.boolean  "vip",                      default: false
+    t.boolean  "verified",                 default: false
+    t.string   "license_pic_file_name"
+    t.string   "license_pic_content_type"
+    t.integer  "license_pic_file_size"
+    t.datetime "license_pic_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
