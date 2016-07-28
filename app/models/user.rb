@@ -15,7 +15,8 @@ class User < ApplicationRecord
 		:message => "License image must be less than 5 megabytes in size" }
   
   validates :address, presence: true
-  validates :phone, presence: true, uniqueness: true
+  validates :phone, presence: true, uniqueness: true, 
+    format: { with: /(\+1 )?\(?[0-9]{3}\)? ?-?[0-9]{3}? ?-?[0-9]{4}/}
   validates :birthday, presence: true
 
   has_many :orders
