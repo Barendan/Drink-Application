@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
 	# user account page 
 	def show
-		@user = User.find(params[:id])
 	end
 
 	# edit account info page
@@ -53,11 +52,7 @@ class UsersController < ApplicationController
 
 	# Admin only 
 	def index
-		usersArr = User.all
-
-		@userNameArr = usersArr.each do |user|
-			user.first_name + " " + user.last_name
-		end
+		@usersArr = User.all
 	end
 
 	private

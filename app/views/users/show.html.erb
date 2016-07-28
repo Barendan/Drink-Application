@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<% @usersArr.each do |user| %>
-	<%= user.first_name %>
-	<%= user.last_name %>
-	<%= user.email %>
-	<%= user.password %>
-
-	<%= user.driver_license %>
-	<%= user.avatar %>
-	<%= user.address %>
-	<%= user.phone %>
-	<%= user.birthday %>
-	<%= user.driver %>
-	<%= user.vip %>
-	<%= user.verified %>
+<% @user.each do |user| %>
+	<b>First Name:</b> <%= user.first_name %>
+	<b>Last Name</b> <%= user.last_name %>
+	<b>Email</b> <%= user.email %>
+	<b>Password:</b> <%= user.password %>
+ 
+	<b>License Number:</b> <%= user.driver_license %>
+	<b>License Image:</b> <%= user.avatar %>
+	<b>Address:</b> <%= user.address %>
+	<b>Phone Number:</b> <%= user.phone %>
+	<b>Birthday:</b> <%= user.birthday %>
+	<b>Driver?:</b> <%= user.driver %>
+	<b>VIP?:</b> <%= user.vip %>
+	<b>Verified?:</b> <%= user.verified %>
 <% end %>
 
 <%= link_to 'Edit', edit_user_path(@user.id) %> |
