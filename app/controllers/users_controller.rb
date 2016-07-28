@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	before_action :authorize_user, except: [:index, :create]
 	before_action :admin_only, only: [:index]
 
+	# Is devise already doing this?
 	def create
 		@user = User.create( user_params )
 		if user.save
@@ -13,12 +14,12 @@ class UsersController < ApplicationController
 
 	# Post sign-in welcome page
 	def home
-		@user = current_user ? @current_user.username : "Guest"
+		@user = current_user ? @current_user.username : redirect_to sign_in_path
 	end
 
 	# user account page 
 	def show
-
+		@user = User.find(params[:id])
 	end
 
 	# edit account info page
