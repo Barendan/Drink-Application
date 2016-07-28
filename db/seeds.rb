@@ -15,12 +15,12 @@ User.create!(
 	email: 'barendan@gmail.com',
 	password: 'junkfood',
 	driver_license: 'B651-169-37-140-0',
-	license_url: 'image_url',
 	address: '1077 se 6th ave, Dania Beach, Fl 33004',
 	phone: '305-414-9776',
 	birthday: DateTime.new(1992, 04, 20),
 	vip: true,
 	verified: true,
+	role: 'admin',
 	)
 
 User.create!(
@@ -32,7 +32,6 @@ User.create!(
 	address: '350 S Miami Ave apt 3402, Miami, Fl 33130',
 	phone: '954 554 9364',
 	birthday: DateTime.new(1937, 06, 01),
-	driver: true,
 	vip: false,
 	verified: true,
 	)
@@ -43,7 +42,7 @@ User.create!(
 	email: 'elonmusk@tesla.com',
 	password: 'simulation',
 	driver_license: 'B314-161-71-220-0',
-	license_url: 'image_url',
+	license_pic: 'image_url',
 	address: '120 SW 8th St, Miami, FL 33130',
 	phone: '305-718-1446',
 	birthday: DateTime.new(1971, 06, 28),

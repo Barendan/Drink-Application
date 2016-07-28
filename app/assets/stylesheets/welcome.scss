@@ -1,11 +1,38 @@
 
-html {
+.welcomePage {
 	background: url("store_home1.jpg") no-repeat center center fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-	// background-color: black;
+	background-color: black;
+	color: white;
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.userBase {
+	background: url("matrix.gif") no-repeat center center fixed;
+	background-size: cover;
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	font-size: 150%;
 	color: white;
 }
 
@@ -16,27 +43,13 @@ html {
 }
 
 .welcomeLinks {
-
 	height: 35px;
 	width: 70px;
 	color: white;
 }
 
 a {
-	color: #850405
+	font-weight: bold;
+	color: #8F3E13;
 }
 
-
-// .signupBack {
-// 	position: absolute;
-// 	top: 50px;
-// 	left: 0;
-// 	background-color: black;
-// 	opacity: 0.4;
-// 	width: 250px;
-// 	height: 500px;
-// }
-
-.field {
-	// opacity: 1;
-}
