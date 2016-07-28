@@ -17,6 +17,9 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :phone, presence: true, uniqueness: true, 
     format: { with: /(\+1 )?\(?[0-9]{3}\)? ?-?[0-9]{3}? ?-?[0-9]{4}/}
+  # Does Devise already check format for email?
+  # validates :email, presence: true, uniqueness: true,   
+  #   format: { with: /^\w+@\w+\.[A-Za-z]+$/ }
   validates :birthday, presence: true
 
   has_many :orders
