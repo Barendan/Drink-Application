@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
-
-	# Do I need this?
-	def new
-		@user = User.new
-	end
+	before_action :authorize_user, except: [:index, :create]
+	before_action :admin_only, only: [:index]
 
 	def create
 		@user = User.create( user_params )
@@ -13,6 +10,7 @@ class UsersController < ApplicationController
 			redirect_to new_user_registration_path
 		end
 	end
+
 	# Post sign-in welcome page
 	def home
 		@user = current_user ? @current_user.username : "Guest"
@@ -44,7 +42,7 @@ class UsersController < ApplicationController
 	def destroy
 		@user.destroy
 	    respond_to do |format|
-	      format.html { redirect_to users_url, notice: 'Sser was successfully destroyed.' }
+	      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
 	      format.json { head :no_content }
 	    end
 	end
@@ -53,7 +51,11 @@ class UsersController < ApplicationController
 
 	# Admin only 
 	def index
-		@usersArr = User.all
+		usersArr = User.all
+
+		@userNameArr = usersarr.each do |user|
+			user.first_name + " " + user.last_name
+		end
 	end
 
 	private
