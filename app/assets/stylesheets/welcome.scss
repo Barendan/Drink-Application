@@ -5,7 +5,6 @@
     -moz-background-size: cover;
     -o-background-size: cover;
 	background-color: black;
-	color: white;
 	/* Set rules to fill background */
 	min-height: 100%;
 	min-width: 1024px;
@@ -56,8 +55,12 @@
 }
 
 .divBar {
-	background: rgba(143, 62, 19, 0.5);
-    -pie-background:  rgba(143, 62, 19, 0.5);
+	background-image: url("fire_shot.jpg");
+	background-size: 100px 85px;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, 0.5);
+    -pie-background:  rgba(0, 0, 0, 0.5);
     behavior: url(PIE.htc);
 	position: absolute;
 	left: 0;
@@ -80,30 +83,30 @@
 	color: white;
 }
 
-a {
-	font-weight: bold;
-	color: #CA0008;
-}
-a:hover {
-	color: red;
-}
 .title {
 	// display: inline;
 	font-size: 48px;
-	color: #CA0008;
 	margin-right: 10px;
+	// color: #CA0008;
+	animation: blink 2s linear infinite;
 }
-.title:hover {
-	color: red;
+@keyframes blink {
+    0% { color  : red; }
+    49% { color : #CA0008; }
+    50% { color : blue; }
+    100% { color: #CA0008; }
 }
-.title a{
-	text-decoration: none !important;
-}
+// Blink using JS
+// .blinking {
+// 	color: red;
+// }
+
 .underText {
 	display: inline-block;
 	position: relative;
 	top:20px;
 	margin-top: 10px;
+	color: white;
 }
 
 
@@ -111,4 +114,12 @@ a:hover {
 
 .baseImg {
 	float: right;
+}
+
+a {
+	font-weight: bold;
+	color: #CA0008;
+}
+a:hover {
+	color: red;
 }
