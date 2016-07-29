@@ -1,29 +1,26 @@
-.container {
+.js-show {
 	background: url("store_home1.jpg") no-repeat center center fixed;
 	position: absolute;
-	top: 90px;
+	top: 95px;
 	right: 0px;
 	width: 5%;
 	height: 100%;
+}
+.js-show button {
+	color: black;
+	border-radius: 10px;
+}
+.opaque {
 	opacity: 1.0;
 }
-.container:hover {
+.opaque:hover {
+	background-color: black;
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 }
 
-.previewProducts {
-	background-color: black;
-	color: white;
-	position: absolute;
-	top: 110px;
-	left: 50px;
-	width: 90%;
-	height: 80%;
-	opacity: 0.5;
-}
-.hidden {
-	display:none;
+.opaque .close {
+	display: none;
 }
 // .previewProducts:hover {
 // 	opacity: 1.0;
@@ -31,6 +28,23 @@
 // }
 
 
+
+
+
+
+
+
+.previewProducts {
+	background: url("store_home1.jpg") no-repeat center center fixed;
+	background-color: black;
+	color: white;
+	position: absolute;
+	top: 110px;
+	left: 50px;
+	width: 90%;
+	height: 80%;
+	opacity: 0.8;
+}
 .purchaseProducts{
 	position: absolute;
 	top: 110px;

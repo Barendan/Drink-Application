@@ -1,17 +1,25 @@
 <div class="homePage">
+	<button class="hidden">X
+	</button>
 
-	<div class="topBar">
-		<h1> <%= @randomGreet %> <%= @user.first_name %> .</h1>
-	</div>
+	<div class="divBar">
+		<b class="title">&nbsp;FireWater</b>
+		<span class="underText">
+		<%= @randomGreet %> <%= @user.first_name %> .
+		</span>
 
-
-
-	<div class="navBar">
-		<button class="welcomeLinks">
-			<%= link_to 'My Account', edit_user_registration_path %>
-		</button>
-		<button class="welcomeLinks">
+		<div class="navBar">
+			<button class="welcomeLinks">
+			<%= link_to 'Account', edit_user_registration_path %>
+			</button>
+			<button class="welcomeLinks">
 			<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-		</button>
+			</button>
+		</div>
 	</div>
+
+	<div class="js-show opaque">
+		<button class="close"> Close </button>
+	</div>
+
 </div>

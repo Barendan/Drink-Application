@@ -7,16 +7,17 @@ $(document).ready( function () {
 
 	// $('.js-show').toggleClass('previewProducts');
 
-	$('.container').click( function () {
-		$('.js-show').toggleClass('previewProducts');
-		$('.js-show').toggleClass('hidden');
-
-
+	$('.js-show').click( function () {
+		$('.js-show').animate({width:'100%'});
+		$('.js-show').removeClass('opaque');
 		// $('.js-show').toggleClass('previewProducts');
-
 	});
 
-
+	$('.close').click( function (e) {
+		e.stopPropagation();
+		$('.js-show').animate({width:'5%'});
+		$('.js-show').addClass('opaque');
+	});
 
 // Flashing Title but CSS is already doing this 
 // 	var flashBaby = $('.title');
