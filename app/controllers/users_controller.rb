@@ -1,28 +1,18 @@
 class UsersController < ApplicationController
 	# before_action :authorize_user, except: [:index, :create]
-	before_action :admin_only, only: [:index, :destroy]
-
-
-	# Post sign-in welcome page
-	def home
-		@user = current_user
-		if current_user == nil 
-			redirect_to "/account/:id/orders"
-		end
-	end
-
+	before_action :admin_only, only: [:index, :show, :destroy]
 
 	# Admin only 
 	def index
 		@usersArr = User.all
 	end
 
-	# User account page 
+	# User account page
 	def show
 		@user = User.find(params[:id])
 	end
 
-	# Destroy user account (admin only)
+	# Destroy user account(admin only)
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy

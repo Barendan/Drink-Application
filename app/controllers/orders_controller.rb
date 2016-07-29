@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-	before_action :authorize_user
+	# before_action :authorize_user
 	before_action :set_order, only: [:show, :edit, :update, :destroy]
 
 
@@ -15,7 +15,19 @@ class OrdersController < ApplicationController
 
 	# Request order form
 	def new
+		# @user = User.find(params[:user_id])
+		@user = current_user
 		@order = Order.new
+
+		greetings = [
+			"It's 5 o'clock somewhere,",
+			"I hope you are feeling thirsty,",
+			"Here's your excuse to drink,",
+			"Double shot for my buddy,",
+			"It's just one drink,",
+			"Drink responsibly,",
+		]
+		@randomGreet = greetings.sample
 	end
 
 	# POST create order

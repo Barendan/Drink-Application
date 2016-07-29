@@ -4,14 +4,13 @@
 
 <h1> User Info </h1>
 
-	<%= image_tag @user.avatar.url(:medium) %><br>
+	<%= image_tag @user.license_pic.url(:medium) %><br>
 	<b>First Name:</b> <%= @user.first_name %><br>
 	<b>Last Name</b> <%= @user.last_name %><br>
 	<b>Email</b> <%= @user.email %><br>
 	<b>Password:</b> <%= @user.password %><br>
  
 	<b>License Number:</b> <%= @user.driver_license %><br>
-	<b>License Image:</b> <%= @user.avatar %><br>
 	<b>Address:</b> <%= @user.address %><br>
 	<b>Phone Number:</b> <%= @user.phone %><br>
 	<b>Birthday:</b> <%= @user.birthday %><br>
@@ -19,7 +18,7 @@
 	<b>VIP?</b> <%= @user.vip %><br>
 	<b>Verified?</b> <%= @user.verified %><br>
 
-<%= link_to 'Edit', edit_user_path(@user.id) %> |
+<%= link_to 'Edit', edit_user_registration_path(@user.id) %> |
 <%= link_to 'Back', users_path %>
 
 </div>

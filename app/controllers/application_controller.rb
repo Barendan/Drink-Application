@@ -11,11 +11,12 @@ class ApplicationController < ActionController::Base
   
   end
 
+  # Problem will occur with redirect if there is no current_user
   def admin_only
-  	unless current_user.nil? || current_user.role != "admin"
-  		flash[:access_denied] = "Access denied. You must be an admin to see this page."
-  		redirect_to '/accounts/show'
-  	end
+    @user = current_user
+    if @user.role != "admin"
+      redirect_to root_path
+    end
   end
 
 end

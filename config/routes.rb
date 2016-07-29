@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users
-
-  resources :users, path: '/' do 
+  resources :users, except: [:new, :create] do 
     resources :orders
   end
   resources :products, only: [:index]
 
+  get '/home', to: 'orders#new', as: 'home'
 
- get '/company/some/other/route/about' => 'visitors#about', as: :about
+
+
 end
