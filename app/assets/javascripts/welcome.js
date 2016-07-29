@@ -7,9 +7,9 @@ $(document).ready( function () {
 
 	// $('.js-show').toggleClass('previewProducts');
 
-	$('.js-show').click( function () {
-		$('.js-show').animate({width:'100%'});
-		$('.js-show').removeClass('opaque');
+	$('.js-product').click( function () {
+		$('.js-product').animate({width:'100%'});
+		$('.js-product').removeClass('opaque');
 		// $('.js-show').toggleClass('previewProducts');
 	});
 
