@@ -2,21 +2,92 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1> User Info </h1>
+<h1> <u>User Info </u></h1><br>
 
-	<%= image_tag @user.license_pic.url(:medium) %><br>
-	<b>First Name:</b> <%= @user.first_name %><br>
-	<b>Last Name</b> <%= @user.last_name %><br>
-	<b>Email</b> <%= @user.email %><br>
-	<b>Password:</b> <%= @user.password %><br>
- 
-	<b>License Number:</b> <%= @user.driver_license %><br>
-	<b>Address:</b> <%= @user.address %><br>
-	<b>Phone Number:</b> <%= @user.phone %><br>
-	<b>Birthday:</b> <%= @user.birthday %><br>
-	<b>Role:</b> <%= @user.role %><br>
-	<b>VIP?</b> <%= @user.vip %><br>
-	<b>Verified?</b> <%= @user.verified %><br>
+	<div class="baseImg">
+		<h3>License Image:</h3>
+	<%= image_tag @user.license_pic.url(:medium) %>
+	</div>
+
+<table>
+    <thead>
+      <tr>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+          <td> <b>First Name:</b> </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.first_name %></td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Last Name:</b> </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.last_name %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Email:</b> </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.email %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Password:</b> </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.password %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>License Number:</b> </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.driver_license %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Address:</b> </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.address %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Phone Number:</b>  </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.phone %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Birthday:</b>  </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.birthday %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Role:</b>  </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.role %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Vip?</b>  </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.vip %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+          <td> <b>Verified?</b>  </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td> <%= @user.verified %> </td>
+          <td>&nbsp;&nbsp;</td>
+        </tr>
+
+    </tbody>
+  </table>
+
+  <br>
 
 <%= link_to 'Edit', edit_user_registration_path(@user.id) %> |
 <%= link_to 'Back', users_path %>

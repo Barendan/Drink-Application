@@ -17,7 +17,7 @@
           <td><a href="/users/<%= user.id %>"> 
             <%= user.first_name %> <%= user.last_name %> </a></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td><%= link_to 'Edit', edit_user_registration_path(user.id) %> </td>
+          <td><%= link_to 'Show', user_path(user.id) %> </td>
           <td>&nbsp;&nbsp;</td>
           <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
@@ -26,7 +26,8 @@
   </table>
 
   <br>
-  <%= link_to 'Create a User', new_user_registration_path %>
+  <%= link_to 'Create a User', new_user_registration_path %><br>
+  <%= link_to 'Back', home_path %>
 
 
 </div>

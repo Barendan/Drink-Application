@@ -1,5 +1,24 @@
-
 .welcomePage {
+	background: url("welcome3.jpg") no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-color: black;
+	color: white;
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.homePage {
 	background: url("store_home1.jpg") no-repeat center center fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -36,8 +55,10 @@
 	color: white;
 }
 
-.topBar {
-	background-color: #8F3E13;
+.divBar {
+	background: rgba(143, 62, 19, 0.5);
+    -pie-background:  rgba(143, 62, 19, 0.5);
+    behavior: url(PIE.htc);
 	position: absolute;
 	left: 0;
 	top: 0; 
@@ -45,7 +66,6 @@
 	height: 75px;
 	padding: 5px;
 	border-style: solid solid double solid;
-	opacity: 0.9;
 }
 
 .navBar {
@@ -62,23 +82,33 @@
 
 a {
 	font-weight: bold;
-	color: #8F3E13;
+	color: #CA0008;
+}
+a:hover {
+	color: red;
+}
+.title {
+	// display: inline;
+	font-size: 48px;
+	color: #CA0008;
+	margin-right: 10px;
+}
+.title:hover {
+	color: red;
+}
+.title a{
+	text-decoration: none !important;
+}
+.underText {
+	display: inline-block;
+	position: relative;
+	top:20px;
+	margin-top: 10px;
 }
 
-h1 {
-	-webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px; 
+
+
+
+.baseImg {
+	float: right;
 }
-
-.orderMap {
-
-}
-.previewProducts {
-
-}
-.purchaseProducts{
-
-}
-
