@@ -1,40 +1,17 @@
-.js-product {
+// Product preview (Welcome Page)
+.js-preview {
 	background: url("store_home1.jpg") no-repeat center center fixed;
 	position: absolute;
 	top: 95px;
-	right: 0px;
+	right: 0;
 	width: 5%;
 	height: 100%;
 	border: dashed;
 	border-width: 2px;
 	border-color: white;
 }
-.js-product button,
-.js-map button {
-	background-color: black;
-	border-radius: 10px;
-	color: white;
-}
-.js-product button:hover,
-.js-map button:hover {
-	background-color: #232222;
-}
-
-.cthru {
-	opacity: 0.8;
-}
-.cthru:hover {
-	background-color: black;
-	opacity: 1.0;
-	filter: alpha(opacity=100);
-}
-.cthru .js-closeProduct {
-	display: none;
-}
-
-
-
-.js-map {
+// Map display panel
+.js-previewMap {
 	// background: url("store_home1.jpg") no-repeat center center fixed;
 	position: absolute;
 	top: 95px;
@@ -48,9 +25,71 @@
 	text-align: center;
 	z-index: -1;
 }
-.js-map button {
-	float:right;
+
+
+// Product display panel
+.js-product {
+	background: url("store_home1.jpg") no-repeat center center fixed;
+	position: absolute;
+	top: 95px;
+	right: 5%;
+	width: 5%;
+	height: 100%;
+	border: dashed;
+	border-width: 2px;
+	border-color: white;
 }
+
+// Close button display settings
+.js-review button,
+.js-preview button,
+.js-product button,
+.js-map button {
+	background-color: black;
+	border-radius: 10px;
+	color: white;
+}
+.js-review button:hover,
+.js-preview button:hover,
+.js-product button:hover,
+.js-map button:hover {
+	background-color: #232222;
+}
+
+// Closed panel effect
+.cthru {
+	opacity: 0.8;
+}
+.cthru:hover {
+	background-color: black;
+	opacity: 1.0;
+	filter: alpha(opacity=100);
+}
+.cthru .js-closeProduct {
+	display: none;
+}
+
+
+// Map display panel
+.js-map {
+	// background: url("store_home1.jpg") no-repeat center center fixed;
+	position: absolute;
+	top: 95px;
+	left: 0px;
+	width: 90%;
+	height: 90%;
+	border: dashed;
+	border-width: 2px;
+	border-color: white;
+	color: white;
+	text-align: center;
+	z-index: -1;
+}
+// .js-map button {
+// 	float:right;
+// }
+
+// Doesn't appear until panel is opened
 .cthru .js-closeMap {
 	display: none;
 }
@@ -58,44 +97,15 @@
 	display: none;
 }
 
-
-
-
-
-
-
-.previewProducts {
-	background: url("store_home1.jpg") no-repeat center center fixed;
-	background-color: black;
-	color: white;
+// Review display panel
+.js-review {
+	background: url("welcome2.jpg") no-repeat center center fixed;
 	position: absolute;
-	top: 110px;
-	left: 50px;
-	width: 90%;
-	height: 80%;
-	opacity: 0.8;
-}
-.purchaseProducts{
-	position: absolute;
-	top: 110px;
-	left: 50px;
-	width: 90%;
-	height: 80%;
-	opacity: 0.5;
-}
-.purchaseProducts:hover {
-	opacity: 1.0;
-	filter: alpha(opacity=100);
-}
-.orderMap {
-	position: absolute;
-	top: 110px;
-	left: 50px;
-	width: 90%;
-	height: 80%;
-	opacity: 0.5;
-}
-.orderMap:hover {
-	opacity: 1.0;
-	filter: alpha(opacity=100);
+	top: 95px;
+	right: 0;
+	width: 5%;
+	height: 100%;
+	border: dashed;
+	border-width: 2px;
+	border-color: white;
 }

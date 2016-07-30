@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	# before_action :authorize_user, except: [:index, :create]
 	before_action :admin_only, only: [:index, :show, :destroy]
 
+
 	# Admin only 
 	def index
 		@usersArr = User.all
