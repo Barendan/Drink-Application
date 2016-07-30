@@ -8,8 +8,8 @@
 
 		<div class="navBar">
 			<button class="welcomeLinks">
-			<%= link_to 'Account', edit_user_registration_path %>
-			</button>
+			<%= link_to 'My Account', edit_user_registration_path %>
+			</button>&nbsp;&nbsp;&nbsp;
 			<button class="welcomeLinks">
 			<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 			</button>
@@ -24,8 +24,8 @@
 		<button class="js-closeMap"> Close </button>
 
 		<div class="js-showMap"> 
-			Giant Map!
-
+			<h2>Here are the drivers currently in your area: </h2>
+		<!-- Map code goes here -->
 		</div>
 	</div>
 

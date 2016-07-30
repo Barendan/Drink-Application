@@ -9,12 +9,14 @@
 	border-width: 2px;
 	border-color: white;
 }
-.js-product button {
+.js-product button,
+.js-map button {
 	background-color: black;
 	border-radius: 10px;
 	color: white;
 }
-.js-product button:hover {
+.js-product button:hover,
+.js-map button:hover {
 	background-color: #232222;
 }
 
@@ -42,15 +44,12 @@
 	border: dashed;
 	border-width: 2px;
 	border-color: white;
-	z-index: -1;
 	color: white;
+	text-align: center;
+	z-index: -1;
 }
 .js-map button {
-	color: black;
-	border-radius: 10px;
-}
-.js-map button:hover {
-	background-color: #232222;
+	float:right;
 }
 .cthru .js-closeMap {
 	display: none;
