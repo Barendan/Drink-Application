@@ -4,23 +4,29 @@
 	<div class="divBar">
 		<b class="title">&nbsp;FireWater</b>
 		<span class="underText">
-		Let the party come to you. <br>
+		Let the party come to you. 
 		<u>Wherever</u> you are. </span>
 
 
 		<div class="navBar">
-			<button class="welcomeLinks">
-				<%= link_to 'Login', new_user_session_path %> 
-			</button>&nbsp;&nbsp;&nbsp;
-			<button class="welcomeLinks">
-				<%= link_to 'Sign Up', new_user_registration_path %>
-			</button>
+			<a href="/users/sign_in">
+				<button class="welcomeLinks">
+				Login
+				</button>
+			</a>&nbsp;&nbsp;&nbsp;
+			<a href="/users/sign_up">
+				<button class="welcomeLinks">
+				Sign Up
+				</button>
+			</a>
 		</div>
 	</div>
 
-	<div class="js-previewMap">
-		<!-- <button class="js-closeMap"> Close </button> -->
+	<div class="js-about">
+		<p class="js-summary"> What is FireWater? </p>
+	</div>
 
+	<div class="js-previewMap cthru">
 		<div class="js-showMap"> 
 			<h2>Here are the drivers currently in your area: </h2>
 		<!-- Map code goes here -->
@@ -28,7 +34,7 @@
 	</div>
 	
 	<div class="js-preview cthru">
-		<!-- <button class="close"> Close </button> -->
+		<!-- preview of stock goes here -->
 	</div>
 
 </div>

@@ -90,6 +90,7 @@
 .welcomeLinks:hover {
 	background-color: #000;
 	border-style: inset;
+	border-color: red;
 	color: red !important;
 	// opacity: 0.5;
 }
@@ -97,7 +98,8 @@
 .title {
 	// display: inline;
 	font-size: 48px;
-	margin-right: 10px;
+	// margin-right: 10px;
+	margin-left: 2em;
 	// color: #CA0008;
 	animation: blink 2s linear infinite;
 }
@@ -113,9 +115,10 @@
 // }
 
 .underText {
-	display: inline-block;
+	// display: inline-block;
 	position: relative;
 	top:20px;
+	left: -170px;
 	margin-top: 10px;
 	color: white;
 }
