@@ -22,6 +22,8 @@ User.create!(
 	vip: true,
 	verified: true,
 	role: 'admin',
+	latitude: 25.764370,
+	longitude: -80.196558,
 	)
 
 User.create!(
@@ -36,6 +38,9 @@ User.create!(
 	birthday: DateTime.new(1937, 06, 01),
 	vip: false,
 	verified: true,
+	role: 'driver',
+	latitude: 25.764368,
+	longitude: -80.196558,
 	)
 
 User.create!(
@@ -50,6 +55,9 @@ User.create!(
 	birthday: DateTime.new(1971, 06, 28),
 	vip: true,
 	verified: true,
+	role: 'driver',
+	latitude: 25.767325,
+	longitude: -80.193082,
 	)
 
 # Types of Liquor Seeds-------------------------

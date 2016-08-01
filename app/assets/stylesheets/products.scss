@@ -10,6 +10,9 @@
 	border-width: 2px;
 	border-color: white;
 }
+.js-summary {
+	margin-left: 10px;
+}
 // Product preview (Welcome Page)
 .js-preview {
 	background: url("store_home1.jpg") no-repeat center center fixed;
@@ -33,11 +36,12 @@
 	border: dashed;
 	border-width: 2px;
 	border-color: white;
-	color: white;
+	color: red;
 	text-align: center;
 	z-index: -1;
 }
 
+// --------------------------------------------
 
 // Product display panel
 .js-product {
@@ -51,36 +55,6 @@
 	border-width: 2px;
 	border-color: white;
 }
-
-// Close button display settings
-// .js-review button,
-// .js-preview button,
-// .js-product button,
-// .js-map button {
-// 	background-color: black;
-// 	border-radius: 10px;
-// 	color: white;
-// }
-// .js-review button:hover,
-// .js-preview button:hover,
-// .js-product button:hover,
-// .js-map button:hover {
-// 	background-color: #232222;
-// }
-
-// Closed panel effect
-.cthru {
-	opacity: 0.8;
-}
-.cthru:hover {
-	background-color: black;
-	opacity: 1.0;
-	filter: alpha(opacity=100);
-}
-.cthru .js-closeProduct {
-	display: none;
-}
-
 
 // Map display panel
 .js-map {
@@ -101,20 +75,6 @@
 // 	float:right;
 // }
 
-// Doesn't appear until panel is opened
-.cthru .js-aboutP{
-	display: none;
-}
-.cthru .js-closeMap {
-	display: none;
-}
-.cthru .js-showMap {
-	display: none;
-}
-.cthru .js-summary{
-	display: none;
-}
-
 // Review display panel
 .js-review {
 	background: url("welcome2.jpg") no-repeat center center fixed;
@@ -128,3 +88,71 @@
 	border-color: white;
 }
 
+
+
+// Closed panel effect
+.closed {
+	opacity: 0.8;
+}
+.closed:hover {
+	background-color: black;
+	opacity: 1.0;
+	filter: alpha(opacity=100);
+}
+.closed .js-closeProduct {
+	display: none;
+}
+// Doesn't appear until panel is opened
+.closed .js-aboutP{
+	display: none;
+}
+.closed .js-closeMap {
+	display: none;
+}
+.closed .js-showMap {
+	display: none;
+}
+.closed .js-summary{
+	display: none;
+}
+
+
+
+
+
+// #map-container {
+//    height: 400px;
+//    border-radius: 16px 16px;
+//    border-color: #fff;
+//    border-style: solid;
+//    box-shadow: 2px 2px 10px #B1B1B1;
+//    margin-top: 25px;
+//    border-width: 7px;
+//  }
+// .js-showMap {
+// 	height: 100%;
+// }
+ #map {
+   height: 500px;
+   width: 85%;
+   margin: auto;
+   // opacity: 0.9;
+ }
+
+
+
+// Close button display settings
+// .js-review button,
+// .js-preview button,
+// .js-product button,
+// .js-map button {
+// 	background-color: black;
+// 	border-radius: 10px;
+// 	color: white;
+// }
+// .js-review button:hover,
+// .js-preview button:hover,
+// .js-product button:hover,
+// .js-map button:hover {
+// 	background-color: #232222;
+// }
