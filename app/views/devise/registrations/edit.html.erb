@@ -1,7 +1,7 @@
 <div class="deviseCont">
 </div>
 
-<div class="prettyDevise">
+<div class="editDevise">
 
     <center><h2>Edit <%= resource_name.to_s.humanize %></h2></center>
 
@@ -28,6 +28,22 @@
       <% end %>
 
       <div class="field">
+          <%= f.label :license_picture %><br />
+          <center><%= f.file_field :license_pic, as: :file, autofocus: true %>
+          </center>
+      </div>   
+
+      <div class="field">
+          <%= f.label :phone %><br />
+          <%= telephone_field :phone, autofocus: true %>
+      </div>
+
+      <div class="field">
+          <%= f.label :birthday %><br />
+          <%= f.date_field :birthday, autofocus: true %>
+      </div>
+
+      <div class="field">
         <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
         <%= f.password_field :password, autocomplete: "off" %>
         <% if @minimum_password_length %>
@@ -46,29 +62,13 @@
         <%= f.password_field :current_password, autocomplete: "off" %>
       </div> 
 
-        <div class="field">
-          <%= f.label :license_picture %><br />
-          <center><%= f.file_field :license_pic, as: :file, autofocus: true %>
-          </center>
-        </div>   
-
-        <div class="field">
-          <%= f.label :phone %><br />
-          <%= telephone_field :phone, autofocus: true %>
-        </div>
-
-        <div class="field">
-          <%= f.label :birthday %><br />
-          <%= f.date_field :birthday, autofocus: true %>
-        </div>
-
       <div class="actions">
         <%= f.submit "Update" %>
       </div>
     <% end %>
 <br>
     <!-- <span style="float: right"> -->
-    Have a drinking problem? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    Have a drinking problem? <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
     <!-- </span> -->
     <span style="float: right; margin: 0px;">
     <%= link_to "Back", :back %>

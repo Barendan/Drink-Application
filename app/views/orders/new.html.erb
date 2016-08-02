@@ -5,22 +5,25 @@
 	<div class="divBar">
 		<b class="title">&nbsp;FireWater</b>
 		<span class="underText">
-		<%= @randomGreet %> <%= @user.first_name %> .
+		<%= @randomGreet %> <%= @user.first_name %>.
 		</span>
 
 		<div class="navBar">
-			<button class="welcomeLinks">
-			<%= link_to 'My Account', edit_user_registration_path %>
-			</button>&nbsp;&nbsp;&nbsp;
-			<button class="welcomeLinks">
-			<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-			</button>
+			<a href="/users/<%= @current_user.id %>">
+			    <button class="welcomeLinks">
+			     My Account
+			    </button></a>&nbsp;&nbsp;&nbsp;
+
+				<%= link_to(destroy_user_session_path, method: :delete) do %>
+					<button class="welcomeLinks">
+						Logout
+					</button>
+				<% end %>		
 		</div>
 	</div>
 
-
 	<div class="js-product closed">
-		<h2 class="closeProduct"> Select all the products you'd like delivered: </h2>
+		<h2 class="closeProduct"> Select products to have delivered:</h2>
 	</div>
 
 	<div class="js-map">
@@ -39,10 +42,35 @@
 
 		</div>
 	</div>
-	
+
 
 	<div class="js-review closed">
-		<p class="js-summary"> Your Order Summary:</p>
+		<p class="summary"> Your Order Summary:
+
+			<form action="/users/<%= current_user.id %>/orders" method="POST">
+			  <div>
+			    <label for="address">Delivery Address</label>
+			    <textarea name="order[address]" id="address"></textarea>
+			  </div>
+
+			  <div>
+			    <label for="quantity">Quantity</label>
+			    <input type="number" name="product_order[quantity]" id="quantity">
+			  </div>
+
+			   <input type='hidden' name="order[driver_id]" class="js-orderDriver">
+
+			    <input type='hidden' name="product_order[product_id]" class="js-productID">
+
+			  <input type='hidden' name='authenticity_token'
+			      value='<%= form_authenticity_token %>'>
+
+			  <button type="submit" class="welcomeLinks">Place Your Order</button>
+
+			</form>
+		
+
+		</p>
 	</div>
 
 </div>

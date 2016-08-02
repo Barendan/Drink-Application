@@ -23,6 +23,16 @@
         </div>
 
         <div class="field">
+          <%= f.label :phone %><br />
+          <%= telephone_field :phone, autofocus: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :birthday %><br />
+          <%= f.date_field :birthday, autofocus: true %>
+        </div>
+
+        <div class="field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -35,29 +45,10 @@
         </div>
 
         <div class="field">
-          <%= f.label :driver_license %><br />
-          <%= f.text_field :driver_license, autofocus: true %>
-        </div>  
-
-        <div class="field">
           <%= f.label :license_pic %><br />
           <%= f.file_field :license_pic, as: :file, autofocus: true %>
         </div>  
 
-        <div class="field">
-          <%= f.label :address %><br />
-          <%= f.text_field :address, autofocus: true %>
-        </div>  
-
-        <div class="field">
-          <%= f.label :phone %><br />
-          <%= telephone_field :phone, autofocus: true %>
-        </div>
-
-        <div class="field">
-          <%= f.label :birthday %><br />
-          <%= f.date_field :birthday, autofocus: true %>
-        </div>
 
 
         <div class="actions">
@@ -65,7 +56,7 @@
         </div>
       <% end %>
     </div>
-
+<br>
     <%= render "devise/shared/links" %>
 
   </div>

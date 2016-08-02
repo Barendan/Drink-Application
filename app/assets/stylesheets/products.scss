@@ -1,34 +1,22 @@
 //  About Panel (Welcome Page)
 .js-about {
 	// background: url("store_home1.jpg") no-repeat center center fixed;
-	background-color: black;
+	// background-color: black;
 	position: absolute;
 	top: 90px;
 	left: 0px;
 	width: 90%;
 	height: 100%;
-	border: dashed;
-	border-width: 2px;
-	border-color: white;
+	// border: dashed;
+	// border-width: 2px;
+	// border-color: white;
 }
-.js-summary {
+.summary {
 	color: white;
 	font-size: 24px;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	// text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-// Product preview (Welcome Page)
-.js-preview {
-	background: url("store_home1.jpg") no-repeat center center fixed;
-	position: absolute;
-	top: 90px;
-	right: 0;
-	width: 5%;
-	height: 100%;
-	border: dashed;
-	border-width: 2px;
-	border-color: white;
-}
 // Map display panel
 .js-previewMap {
 	background: url("carB.jpeg") no-repeat center center fixed;
@@ -44,6 +32,21 @@
 	color: red;
 	text-align: center;
 	z-index: -1;
+}
+// Product preview (Welcome Page)
+.js-preview {
+	background: url("store_home1.jpg") no-repeat center center fixed;
+	position: absolute;
+	top: 90px;
+	right: 0;
+	width: 5%;
+	height: 100%;
+	border: dashed;
+	border-width: 2px;
+	border-color: white;
+}
+.product {
+	
 }
 
 // --------------------------------------------
@@ -98,7 +101,6 @@
 }
 
 
-
 // Closed panel effect
 .closed {
 	opacity: 0.8;
@@ -109,35 +111,17 @@
 	filter: alpha(opacity=100);
 }
 // Doesn't appear until panel is opened
-.closed .js-aboutP{
+.closed .js-aboutP,
+.closed .js-closeMap,
+.closed .js-showMap,
+.closed .product,
+.closed .summary,
+.closed .white,
+.closed .holder {
 	display: none;
 }
-.closed .js-closeMap {
-	display: none;
-}
-.closed .js-showMap {
-	display: none;
-}
-.closed .closeProduct {
-	display: none;
-}
-.closed .js-summary {
-	display: none;
-}
-// .closed .holder {
-// 	display: none;
-// }
 
 
-
-.holder {
-	// background-color: white;
-	margin: auto;
-	// margin: 20px;
-	opacity: 0.6;
-	width: 70%;
-	height: 50%;
-}
 
 
 

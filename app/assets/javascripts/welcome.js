@@ -1,15 +1,22 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$(document).ready( function () {
+$(document).on("turbolinks:load", function () {
 
 
 	// Welcome Preview Map Events
 	$('.js-previewMap').click( function () {
-		$('.js-previewMap').animate({width:'90%'});
-		$('.js-previewMap').removeClass('closed');
+    function refreshMap () {
+      console.log("refreshmiami");
+      google.maps.event.trigger(map, 'resize');
+      // map.fitBounds(bounds);
+      // Set center in here
+    }
 
-		initialize();
+    $('.js-previewMap').animate({width:'90%'}, refreshMap);
+    $('.js-previewMap').removeClass('closed');
+
+    initialize();
 
 		if (! $('.js-about').hasClass('closed') ) {
 			$('.js-about').animate({width:'5%'});
@@ -147,7 +154,8 @@ $(document).ready( function () {
 
 // ------------------------------------------------
 	// Map Starts here
-    var map;
+  var map;
+  var bounds;
   var directionsService;
   var stepDisplay;
  
@@ -168,7 +176,7 @@ $(document).ready( function () {
   var myPano;   
   var panoClient;
   var nextPanoId;
-  var timerHandle = null;
+  var timerHandle = [];
   
   var startLoc = new Array();
   startLoc[0] = 'rio claro, trinidad';
@@ -205,7 +213,7 @@ $(document).ready( function () {
       }
 
       map = new google.maps.Map(document.getElementById("map"), myOptions);
-      address = 'New York'
+      address = 'Trinidad and Tobago'
       geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': address}, function(results, status) {
        map.fitBounds(results[0].geometry.viewport);
@@ -269,7 +277,7 @@ $(document).ready( function () {
         console.log("Route:",routeNum);
         if (status == google.maps.DirectionsStatus.OK){
 
-          var bounds = new google.maps.LatLngBounds();
+          bounds = new google.maps.LatLngBounds();
           var route = response.routes[0];
           startLocation[routeNum] = new Object();
           endLocation[routeNum] = new Object();
@@ -316,7 +324,7 @@ $(document).ready( function () {
 
               for (k=0;k<nextSegment.length;k++) {
                   polyline[routeNum].getPath().push(nextSegment[k]);
-                  //bounds.extend(nextSegment[k]);
+                  bounds.extend(nextSegment[k]);
               }
 
             }
@@ -325,7 +333,6 @@ $(document).ready( function () {
         }       
 
            polyline[routeNum].setMap(map);
-           //map.fitBounds(bounds);
            startAnimation(routeNum);  
 
       } // else alert("Directions request failed: "+status);
@@ -341,7 +348,6 @@ $(document).ready( function () {
       var eol= [];
   //----------------------------------------------------------------------                
    function updatePoly(i,d) {
-    console.log("updatePoly");
 
    // Spawn a new polyline every 20 vertices, because updating a 100-vertex poly is too slow
       if (poly2[i].getPath().getLength() > 20) {
@@ -361,7 +367,6 @@ $(document).ready( function () {
   //----------------------------------------------------------------------------
 
   function animate(index,d) {
-    console.log("animate your brain brotha");
 
      if (d>eol[index]) {
 
@@ -375,7 +380,10 @@ $(document).ready( function () {
       marker[index].setPosition(p);
       marker[index].setOptions({zIndex: Math.round(p.lat()*-100000)<<5});
       updatePoly(index,d);
-      timerHandle[index] = setTimeout("animate("+index+","+(d+step)+")", tick);
+      function start () {
+        animate(index, (d+step));
+      }
+      timerHandle[index] = setTimeout(start, tick);
       currentDistance[index]=d+step;
   }
 
@@ -384,13 +392,16 @@ $(document).ready( function () {
   function startAnimation(index) {
     console.log("startAnimation");
 
+          console.log("backtothefuture",timerHandle);
           if (timerHandle[index]) clearTimeout(timerHandle[index]);
           eol[index]=polyline[index].Distance();
           // map.setCenter(polyline[index].getPath().getAt(0));
 
           poly2[index] = new google.maps.Polyline({path: [polyline[index].getPath().getAt(0)], strokeColor:"#FFFF00", strokeWeight:3});
-
-          timerHandle[index] = setTimeout("animate("+index+",50)",2000);  // Allow time for the initial map display
+          function start () {
+            animate(index,50)
+          }
+          timerHandle[index] = setTimeout(start,2000);  // Allow time for the initial map display
   }  
 
 
@@ -404,7 +415,4 @@ $(document).ready( function () {
 
    
 
-})
-	$(window).resize(function() {
-        google.maps.event.trigger(map, 'resize');
 })

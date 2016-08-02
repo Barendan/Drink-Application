@@ -1,11 +1,10 @@
-<div class="userBase">
+<div class="myaccountDevise">
 
 <p id="notice"><%= notice %></p>
 
-<h1> <u>User Info </u></h1><br>
+<h1> <u>User Info </u></h1>
 
 	<div class="baseImg">
-		<h3>License Image:</h3>
 	<%= image_tag @user.license_pic.url(:medium) %>
 	</div>
 
@@ -38,7 +37,7 @@
         <tr>
           <td> <b>Password:</b> </td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td> <%= @user.password %> </td>
+          <td> -Hidden- </td>
           <td>&nbsp;&nbsp;</td>
         </tr>
         <tr>
@@ -90,6 +89,6 @@
   <br>
 
 <%= link_to 'Edit', edit_user_registration_path(@user.id) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', home_path %>
 
 </div>

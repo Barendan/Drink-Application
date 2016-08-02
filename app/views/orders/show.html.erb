@@ -1,0 +1,23 @@
+<div class="welcomePage">
+
+	<div class="divBar">
+		<b class="title">&nbsp;FireWater</b>
+		<span class="underText">
+		<%= @randomGreet %> <%= @user.first_name %>.
+		</span>
+
+		<div class="navBar">
+			<a href="/users/<%= @current_user.id %>">
+			    <button class="welcomeLinks">
+			     My Account
+			    </button></a>&nbsp;&nbsp;&nbsp;
+
+				<%= link_to(destroy_user_session_path, method: :delete) do %>
+					<button class="welcomeLinks">
+						Logout
+					</button>
+				<% end %>		
+		</div>
+	</div>
+
+</div>

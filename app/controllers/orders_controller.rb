@@ -29,24 +29,55 @@ class OrdersController < ApplicationController
 		]
 		@randomGreet = greetings.sample
 
-		# @allTypes = Type.all
+  # 	@allTypes = Type.all
   #   	@allBrands = Brand.all
   #   	@allProducts = Product.all
 	end
 
 	# POST create order
 	def create
-		@order = Order.create( order_params )
-		respond_to do |format|
-	      if @order.save
-	        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-	        format.json { render :show, status: :created, location: @order }
-	      else
-	        format.html { render :new }
-	        format.json { render json: @order.errors, status: :unprocessable_entity }
-	      end
-    	end
-	end
+		@order = Order.new(
+    		:user_id => current_user.id,
+			:driver_id => params[:order][:driver_id],
+			:address => params[:order][:address],
+			:status_id => "Accepted",
+			:scheduled_for => Time.now,
+			)
+		if @order.save
+			@product_order = ProductOrder.new(
+				:quantity => params[:product_order][:quantity],
+				:product_id => params[:product_order][:product_id],
+				:order_id => @order.id)
+			@product_order.save
+			redirect_to("/users/#{@current_user.id}/orders/#{@order.id}")
+    	else 
+			flash[:alert] = "Your order had an error."
+    		render 'new'
+		end
+
+
+    end
+
+  #   	# Second
+		# @order = Order.create( order_params )
+		# respond_to do |format|
+	 #      if @order.save
+	 #        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+	 #        format.json { render :show, status: :created, location: @order }
+	 #      else
+	 #        format.html { render :new }
+	 #        format.json { render json: @order.errors, status: :unprocessable_entity }
+	 #      end
+
+		# # Third
+		# @my_project = Project.find(params[:project_id])
+
+		# @my_entry = @my_project.time_entries.new(entry_params)
+
+		# if @my_entry.save
+		# 	flash[:notice] = "Project created succesfully"
+		# 	redirect_to "/projects/#{@my_project.id}/time_entries"
+
 
 	# Edit order Form
 	def edit

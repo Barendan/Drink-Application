@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	# before_action :authorize_user, except: [:index, :create]
-	before_action :admin_only, only: [:index, :show, :destroy]
+	before_action :admin_only, only: [:index]
 
 
 	# Admin only 
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
-	# Destroy user account(admin only)
+	# Destroy user account
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy
