@@ -22,13 +22,14 @@ class User < ApplicationRecord
   #   format: { with: /^\w+@\w+\.[A-Za-z]+$/ }
   validates :birthday, presence: true
 
-  has_many :orders
-  has_many :messages
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  
+  has_many :product_orders
+  has_many :orders, through: "product_orders"
+  has_many :messages
 
 end

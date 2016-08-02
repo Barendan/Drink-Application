@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
-	belongs_to :brand, :type
-	# belongs_to :order
+	belongs_to :brand
+	belongs_to :type
+	
 end

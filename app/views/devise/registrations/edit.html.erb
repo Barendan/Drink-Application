@@ -1,8 +1,9 @@
-<div class="deviseContainer">
-  <div class="prettyDevise">
+<div class="deviseCont">
+</div>
 
+<div class="prettyDevise">
 
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <center><h2>Edit <%= resource_name.to_s.humanize %></h2></center>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
@@ -75,11 +76,10 @@
       </div>
     <% end %>
 
-    <br>
+    <span style="float: right">
     Have a drinking problem? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </span><br><br><br>
     <span style="float: right">
     <%= link_to "Back", :back %>
     </span>
-  </div>
-
 </div>

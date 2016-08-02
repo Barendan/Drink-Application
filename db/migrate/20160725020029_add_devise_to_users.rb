@@ -32,12 +32,10 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
 
       t.string :first_name
       t.string :last_name
-      t.string :driver_license
-      t.string :license_url
-      t.string :address
+      t.string :driver_license, default: ""
+      t.string :address , default: ""
       t.string :phone
       t.date   :birthday
-      t.boolean :driver, default: false
       t.boolean :vip , default: false
       t.boolean :verified, default: false
 

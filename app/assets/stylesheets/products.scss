@@ -12,6 +12,9 @@
 }
 .js-summary {
 	margin-left: 10px;
+	background-color: blue;
+	width: auto;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 // Product preview (Welcome Page)
 .js-preview {
@@ -42,20 +45,6 @@
 }
 
 // --------------------------------------------
-
-// Product display panel
-.js-product {
-	background: url("store_home1.jpg") no-repeat center center fixed;
-	position: absolute;
-	top: 90px;
-	right: 5%;
-	width: 5%;
-	height: 100%;
-	border: dashed;
-	border-width: 2px;
-	border-color: white;
-}
-
 // Map display panel
 .js-map {
 	// background: url("store_home1.jpg") no-repeat center center fixed;
@@ -75,17 +64,35 @@
 // 	float:right;
 // }
 
-// Review display panel
-.js-review {
-	background: url("welcome2.jpg") no-repeat center center fixed;
+// Product display panel
+.js-product {
+	background: url("store_home1.jpg") no-repeat center center fixed;
 	position: absolute;
 	top: 90px;
-	right: 0;
+	right: 5%;
 	width: 5%;
 	height: 100%;
 	border: dashed;
 	border-width: 2px;
 	border-color: white;
+	z-index: 1;
+}
+// Review display panel
+.js-review {
+	background: url("welcome2.jpg") no-repeat center center fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	position: absolute;
+	top: 90px;
+	right: 0%;
+	width: 5%;
+	height: 100%;
+	border: dashed;
+	border-width: 2px;
+	border-color: white;
+	z-index: 10;
 }
 
 
@@ -99,9 +106,6 @@
 	opacity: 1.0;
 	filter: alpha(opacity=100);
 }
-.closed .js-closeProduct {
-	display: none;
-}
 // Doesn't appear until panel is opened
 .closed .js-aboutP{
 	display: none;
@@ -112,9 +116,15 @@
 .closed .js-showMap {
 	display: none;
 }
-.closed .js-summary{
+.closed .closeProduct {
 	display: none;
 }
+.closed .js-summary {
+	display: none;
+}
+
+
+
 
 
 
