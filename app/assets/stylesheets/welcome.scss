@@ -55,8 +55,8 @@
 }
 
 .divBar {
-	background-image: url("fire_shot.jpg");
-	background-size: 100px 85px;
+	background-image: url("fire_shotE.jpg");
+	background-size: 60px 85px;
 	background-position: left top;
 	background-repeat: no-repeat;
 	background-color: rgba(0, 0, 0, 0.5);
@@ -128,24 +128,29 @@
 // 	opacity: 0.4;
 // }
 body {
-	background: url("deviseback.jpg") no-repeat center center fixed;
+	background: url("fire_shot.jpg") no-repeat center center fixed;
 	// background-color: #71C2F3;
 	background-size: cover;
 	width: 100%;
 	height: 100%;
 }
 .prettyDevise {
-	background-color: white;
+	background-color: grey;
+	// text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	position: relative;
-	top: 10px;
-	width: 500px;
-	height: 620px;
+	top: 40px;
+	width: 300px;
+	height: auto;
 	border-color: white;
 	border-width: 2px;
-	padding: 7px;
-	margin: auto;
-	box-shadow: 5px 2px 3px #888888, -1px -1px 3px #888888 ;
+	padding: 4px 0px 15px 15px;
+	margin: 0 0 50px 45px;
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	// box-shadow: 5px 2px 3px #888888, -1px -1px 3px #888888 ;
 	opacity: 0.8;
+	text-align: center;
 }
 
 
@@ -162,7 +167,7 @@ body {
 a {
 	font-weight: bold;
 	color: #CA0008;
-	text-decoration: none;
+	// text-decoration: none;
 }
 // a:hover {
 // 	color: red;

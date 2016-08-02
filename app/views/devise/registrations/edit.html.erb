@@ -44,22 +44,13 @@
       <div class="field">
         <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, autocomplete: "off" %>
-      </div>
-
-      <div class="field">
-          <%= f.label :driver_license %><br />
-          <%= f.text_field :driver_license, autofocus: true %>
-        </div>  
+      </div> 
 
         <div class="field">
-          <%= f.label :license_pic %><br />
-          <%= f.file_field :license_pic, as: :file, autofocus: true %>
-        </div>  
-
-        <div class="field">
-          <%= f.label :address %><br />
-          <%= f.text_field :address, autofocus: true %>
-        </div>  
+          <%= f.label :license_picture %><br />
+          <center><%= f.file_field :license_pic, as: :file, autofocus: true %>
+          </center>
+        </div>   
 
         <div class="field">
           <%= f.label :phone %><br />
@@ -75,11 +66,11 @@
         <%= f.submit "Update" %>
       </div>
     <% end %>
-
-    <span style="float: right">
+<br>
+    <!-- <span style="float: right"> -->
     Have a drinking problem? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
-    </span><br><br><br>
-    <span style="float: right">
+    <!-- </span> -->
+    <span style="float: right; margin: 0px;">
     <%= link_to "Back", :back %>
     </span>
 </div>
