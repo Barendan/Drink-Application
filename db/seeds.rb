@@ -423,23 +423,23 @@ Brand.create!(name: "Torres")
 
 
 
-# Tequila Brands
-Brand.create!(name: "")
+# # Tequila Brands
+# Brand.create!(name: "")
 
-# Liqueurs Brands
-Brand.create!(name: "")
+# # Liqueurs Brands
+# Brand.create!(name: "")
 
-# Wine Brands
-Brand.create!(name: "")
+# # Wine Brands
+# Brand.create!(name: "")
 
-# Sparkling Wine Brands
-Brand.create!(name: "")
+# # Sparkling Wine Brands
+# Brand.create!(name: "")
 
-# Champagne Brands
-Brand.create!(name: "")
+# # Champagne Brands
+# Brand.create!(name: "")
 
-# Beer Brands
-Brand.create!(name: "")
+# # Beer Brands
+# Brand.create!(name: "")
 
-# Non-Alcoholic Brands
-Brand.create!(name: "")
+# # Non-Alcoholic Brands
+# Brand.create!(name: "")

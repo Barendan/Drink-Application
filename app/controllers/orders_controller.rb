@@ -28,10 +28,6 @@ class OrdersController < ApplicationController
 			"Drink responsibly,",
 		]
 		@randomGreet = greetings.sample
-
-  # 	@allTypes = Type.all
-  #   	@allBrands = Brand.all
-  #   	@allProducts = Product.all
 	end
 
 	# POST create order

@@ -7,7 +7,6 @@ $(document).on("turbolinks:load", function () {
 	// Welcome Preview Map Events
 	$('.js-previewMap').click( function () {
     function refreshMap () {
-      console.log("refreshmiami");
       google.maps.event.trigger(map, 'resize');
       // map.fitBounds(bounds);
       // Set center in here
@@ -343,7 +342,7 @@ $(document).on("turbolinks:load", function () {
 
       var lastVertex = 1;
       var stepnum=0;
-      var step = 50; // 5; // metres
+      var step = 10; // 5; // metres
       var tick = 100; // milliseconds
       var eol= [];
   //----------------------------------------------------------------------                
