@@ -1,35 +1,37 @@
 
-<div class="welcomePage">
+<div class="backSet">
 
-	<div class="divBar">
+	<div class="navBar">
 		<b class="title">&nbsp;FireWater</b>
-		<span class="underText">
+		<span class="slogan">
 		Let the party come to you. 
 		<u>Wherever</u> you are. </span>
 
 
-		<div class="navBar">
+		<div class="navRight">
 			<a href="/users/sign_in">
-				<button class="welcomeLinks">
+				<button class="navLinks">
 				Login
 				</button>
 			</a>&nbsp;&nbsp;&nbsp;
 			<a href="/users/sign_up">
-				<button class="welcomeLinks z-depth-5">
+				<button class="navLinks">
 				Sign Up
 				</button>
 			</a>
 		</div>
 	</div>
 
+
+
 	<div class="js-about">
 		<div class="holder">
 			<p class="summary">
-			<b class="white">How it Works :</b>
+			<b class="aboutStart">How it Works :</b>
 			<blockquote class="summary">
 				After a simply sign-up process, you will be redirected to the home page. From there, you will see a map displaying available drivers. Once you select a driver, you will then be shown the product's panel, at which point you may choose whichever drink's you prefer. Now don't worry, before anything is confirmed, we will double check the contents of your order via the final order summary panel.
 			</blockquote>
-				<b class="summary white">About : </b>
+				<b class="summary aboutStart">About : </b>
 				<blockquote class="summary">
 				<span class="summary aboutTitle">FireWater </span>
 					is a revolutionary new company that specializes in the delivery of spirits, wines, and beers for anything from high-profile events to the smallest backyard barbeques. <br>
@@ -42,6 +44,7 @@
 	<div class="js-previewMap closed">
 		<div class="js-showMap">
 			<h2>Here are the drivers currently in your area: </h2>
+			
 
 			<!-- Map code goes here -->
 			<div id="map"></div>
@@ -55,9 +58,32 @@
 	
 
 	<div class="js-preview closed">
-		<h2 class="product"> Select products to have delivered:</h2>
-
 		<!-- preview of stock goes here -->
+		<h2 class="product"> Currently Available Products:</h2>
+		<table class="productTable sortable">
+		    <thead>
+		      <tr>
+		        <th><button> Product Name </button></th>
+		        <th><button> Brand </button></th>
+		        <th><button> Type </button></th>
+		        <th><button> Quantity </button></th>
+		        <th><button> Price </button></th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <% @productArr.each do |product| %>
+		        <tr>
+		          <td> <%= product.name %> </td>
+		          <td> <%= product.brand.name %> </td>
+		          <td> <%= product.type.name %> </td>
+		          <td> &nbsp;&nbsp;- 1 + </td>
+		          <td> $<%= product.price %> </td>
+		        </tr>
+		      <% end %>
+		    </tbody>
+		</table>
+
 	</div>
 
 

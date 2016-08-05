@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 
-gem 'materialize-sass'
-
 gem 'gmaps4rails'
 gem "table_print"
 gem 'paperclip', "~> 5.0.0"

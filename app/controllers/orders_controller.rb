@@ -15,9 +15,9 @@ class OrdersController < ApplicationController
 
 	# Request order form
 	def new
-		# @user = User.find(params[:user_id])
 		@user = current_user
 		@order = Order.new
+    	@productArr = Product.all
 
 		greetings = [
 			"It's 5 o'clock somewhere,",
@@ -29,6 +29,9 @@ class OrdersController < ApplicationController
 		]
 		@randomGreet = greetings.sample
 	end
+# @my_project = Project.find(params[:project_id])
+
+# @my_entry = @my_project.time_entries.new(entry_params)
 
 	# POST create order
 	def create
@@ -50,29 +53,7 @@ class OrdersController < ApplicationController
 			flash[:alert] = "Your order had an error."
     		render 'new'
 		end
-
-
     end
-
-  #   	# Second
-		# @order = Order.create( order_params )
-		# respond_to do |format|
-	 #      if @order.save
-	 #        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-	 #        format.json { render :show, status: :created, location: @order }
-	 #      else
-	 #        format.html { render :new }
-	 #        format.json { render json: @order.errors, status: :unprocessable_entity }
-	 #      end
-
-		# # Third
-		# @my_project = Project.find(params[:project_id])
-
-		# @my_entry = @my_project.time_entries.new(entry_params)
-
-		# if @my_entry.save
-		# 	flash[:notice] = "Project created succesfully"
-		# 	redirect_to "/projects/#{@my_project.id}/time_entries"
 
 
 	# Edit order Form

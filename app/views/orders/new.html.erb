@@ -1,21 +1,20 @@
 
+<div class="backSet">
 
-<div class="welcomePage">
-
-	<div class="divBar">
+	<div class="navBar">
 		<b class="title">&nbsp;FireWater</b>
 		<span class="underText">
 		<%= @randomGreet %> <%= @user.first_name %>.
 		</span>
 
-		<div class="navBar">
+		<div class="navRight">
 			<a href="/users/<%= @current_user.id %>">
-			    <button class="welcomeLinks">
+			    <button class="navLinks">
 			     My Account
 			    </button></a>&nbsp;&nbsp;&nbsp;
 
 				<%= link_to(destroy_user_session_path, method: :delete) do %>
-					<button class="welcomeLinks">
+					<button class="navLinks">
 						Logout
 					</button>
 				<% end %>		
@@ -24,6 +23,30 @@
 
 	<div class="js-product closed">
 		<h2 class="closeProduct"> Select products to have delivered:</h2>
+
+		<table class="productTable">
+		    <thead>
+		      <tr>
+		        <th> Product Name </th>
+		        <th> Brand </th>
+		        <th> Type </th>
+		        <th> Quantity </th>
+		        <th> Price </th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <% @productArr.each do |product| %>
+		        <tr>
+		          <td> <%= product.name %> </td>
+		          <td> <%= product.brand.name %> </td>
+		          <td> <%= product.type.name %> </td>
+		          <td> &nbsp;&nbsp;- 1 + </td>
+		          <td> $<%= product.price %> </td>
+		        </tr>
+		      <% end %>
+		    </tbody>
+		</table>
 	</div>
 
 	<div class="js-map">
@@ -65,7 +88,7 @@
 			  <input type='hidden' name='authenticity_token'
 			      value='<%= form_authenticity_token %>'>
 
-			  <button type="submit" class="welcomeLinks">Place Your Order</button>
+			  <button type="submit" class="navLinks">Place Your Order</button>
 
 			</form>
 		

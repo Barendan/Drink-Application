@@ -3,7 +3,6 @@
 
 $(document).on("turbolinks:load", function () {
 
-
 	// Welcome Preview Map Events
 	$('.js-previewMap').click( function () {
     function refreshMap () {
@@ -11,9 +10,9 @@ $(document).on("turbolinks:load", function () {
       // map.fitBounds(bounds);
       // Set center in here
     }
-
     $('.js-previewMap').animate({width:'90%'}, refreshMap);
     $('.js-previewMap').removeClass('closed');
+
 
     initialize();
 
@@ -34,11 +33,6 @@ $(document).on("turbolinks:load", function () {
 
 
 	// Welcome About Events
-	// $('.js-closeAbout').click( function (e) {
-	// 	e.stopPropagation();
-	// 	$('.js-about').animate({width:'5%'});
-	// 	$('.js-about').addClass('closed');
-	// });
 	$('.js-about').click( function () {
 		$('.js-about').animate({width:'90%'});
 		$('.js-about').removeClass('closed');
@@ -176,18 +170,22 @@ $(document).on("turbolinks:load", function () {
   var panoClient;
   var nextPanoId;
   var timerHandle = [];
+
+
   
   var startLoc = new Array();
-  startLoc[0] = 'rio claro, trinidad';
-  startLoc[1] = 'preysal, trinidad';
-  startLoc[2] = 'san fernando, trinidad';
-  startLoc[3] = 'couva, trinidad';
+  startLoc[0] = 'aventura, Miami';
+  startLoc[1] = 'kendall, Miami';
+  startLoc[2] = 'coconut grove, Miami';
+  startLoc[3] = 'brickell, Miami';
+  startLoc[4] = 'North Miami, Florida';
 
   var endLoc = new Array();
-  endLoc[0] = 'princes town, trinidad';
-  endLoc[1] = 'tabaquite, trinidad';
-  endLoc[2] = 'mayaro, trinidad';
-  endLoc[3] = 'arima, trinidad';
+  endLoc[0] = 'North Miami, Florida';
+  endLoc[1] = 'brickell, Miami';
+  endLoc[2] = 'brickell, Miami';
+  endLoc[3] = 'south beach, Miami';
+  endLoc[4] = 'Miami Beach, Florida';
 
 
   var Colors = ["#FF0000", "#00FF00", "#0000FF"];
@@ -212,7 +210,7 @@ $(document).on("turbolinks:load", function () {
       }
 
       map = new google.maps.Map(document.getElementById("map"), myOptions);
-      address = 'Trinidad and Tobago'
+      address = 'Miami'
       geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': address}, function(results, status) {
        map.fitBounds(results[0].geometry.viewport);
@@ -284,14 +282,14 @@ $(document).on("turbolinks:load", function () {
 
           polyline[routeNum] = new google.maps.Polyline({
           path: [],
-          strokeColor: '#FFFF00',
-          strokeWeight: 3
+          strokeColor: '#FFF',
+          strokeWeight: 0
           });
 
           poly2[routeNum] = new google.maps.Polyline({
           path: [],
-          strokeColor: '#FFFF00',
-          strokeWeight: 3
+          strokeColor: '#FFF',
+          strokeWeight: 0
           });     
 
 
@@ -396,12 +394,16 @@ $(document).on("turbolinks:load", function () {
           eol[index]=polyline[index].Distance();
           // map.setCenter(polyline[index].getPath().getAt(0));
 
-          poly2[index] = new google.maps.Polyline({path: [polyline[index].getPath().getAt(0)], strokeColor:"#FFFF00", strokeWeight:3});
+          poly2[index] = new google.maps.Polyline({path: [polyline[index].getPath().getAt(0)], strokeColor:"#FFF", strokeWeight:0});
           function start () {
             animate(index,50)
           }
           timerHandle[index] = setTimeout(start,2000);  // Allow time for the initial map display
   }  
+
+  function removeLine() {
+    map.setMap(null);
+  }
 
 
 

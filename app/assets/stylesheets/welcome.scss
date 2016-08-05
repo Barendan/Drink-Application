@@ -1,4 +1,4 @@
-.welcomePage {
+.backSet {
 	background: url("welcome3.jpg") no-repeat center center fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -17,44 +17,7 @@
 	left: 0;
 }
 
-.homePage {
-	background: url("store_home1.jpg") no-repeat center center fixed;
-	background-size: cover;
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-	background-color: black;
-	color: white;
-	/* Set rules to fill background */
-	min-height: 100%;
-	min-width: 1024px;
-	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
-	/* Set up positioning */
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-.userBase {
-	background: url("matrix.gif") no-repeat center center fixed;
-	background-size: cover;
-	/* Set rules to fill background */
-	min-height: 100%;
-	min-width: 1024px;
-	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
-	/* Set up positioning */
-	position: fixed;
-	top: 0;
-	left: 0;
-
-	font-size: 150%;
-	color: white;
-}
-
-.divBar {
+.navBar {
 	background-image: url("fire_shotE.jpg");
 	background-size: 60px 85px;
 	background-position: left top;
@@ -70,14 +33,14 @@
 	padding: 5px;
 	border-style: solid solid double solid;
 }
-
-.navBar {
+.navRight {
 	display: inline;
 	position: absolute;
 	right: 50px;
 	top: 20px;
 }
-.welcomeLinks {
+
+.navLinks {
 	background-color: transparent;
 	height: 45px;
 	width: 100px;
@@ -87,7 +50,7 @@
 	border-color: #FFF;
 	// border-style: outset;
 }
-.welcomeLinks:hover {
+.navLinks:hover {
 	background-color: black;
 	border-style: inset;
 	// border-color: red;
@@ -97,11 +60,6 @@
 
 
 // Welcome Page
-.white {
-	color: red;
-	text-shadow: none;
-	margin-left: 15px;
-}
 .title {
 	// display: inline;
 	font-size: 48px;
@@ -123,7 +81,7 @@
 // .blinking {
 // 	color: red;
 // }
-.underText {
+.slogan {
 	// display: inline-block;
 	position: relative;
 	top:20px;
@@ -146,14 +104,14 @@
 	border-color: white;
 	border-radius: 10px;
 }
+.aboutStart {
+	color: red;
+	text-shadow: none;
+	margin-left: 15px;
+}
+
 // -----------------------------------------
 
-
-
-// .deviseContainer {
-// 	background: url('bar_display.jpg');
-// 	opacity: 0.4;
-// }
 body {
 	background: url("fire_shot.jpg") no-repeat center center fixed;
 	// background-color: #71C2F3;
@@ -215,24 +173,41 @@ body {
 	opacity: 0.8;
 	// text-align: center;
 }
+.userBase {
+	background: url("matrix.gif") no-repeat center center fixed;
+	background-size: cover;
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
 
-
-
-
-
-
-.baseImg {
+	font-size: 150%;
+	color: white;
+}
+.licensepic {
 	// float: right;
 	text-align: center;
 	// height: 50px;
 	// width: 30px;
 }
 
+
+
+
+
+
+
 a {
 	font-weight: bold;
 	color: #CA0008;
 	// text-decoration: none;
 }
-// a:hover {
-// 	color: red;
-// }
+
+
+

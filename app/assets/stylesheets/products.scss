@@ -45,8 +45,11 @@
 	border-width: 2px;
 	border-color: white;
 }
-.product {
-	
+.productTable {
+	background-color: white;
+	margin: auto;
+	padding: 20px;
+	opacity: 0.7;
 }
 
 // --------------------------------------------
@@ -115,8 +118,10 @@
 .closed .js-closeMap,
 .closed .js-showMap,
 .closed .product,
+.closed .productTable,
+// .closed .sortable,
 .closed .summary,
-.closed .white,
+.closed .aboutStart,
 .closed .holder {
 	display: none;
 }

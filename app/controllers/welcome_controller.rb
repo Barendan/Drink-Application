@@ -2,6 +2,8 @@ class WelcomeController < ApplicationController
 
   # Welcome page (root)
   def index
+    @productArr = Product.all
+    
   	if current_user != nil
   		redirect_to home_path(current_user.id)
   	end
