@@ -18,6 +18,8 @@ class OrdersController < ApplicationController
 		@user = current_user
 		@order = Order.new
     	@productArr = Product.all
+    	@typeArr = Type.all
+
 
 		greetings = [
 			"It's 5 o'clock somewhere,",
