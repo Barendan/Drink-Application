@@ -67,16 +67,14 @@
 		<div class="menu">
 
 		
-			<b class="biggie aboutStart"> Currently Available Products:</b><br><br>
-			<table>
-				<thead id="rowHover">
-					<% @typeArr[0..5].each do |type| %>
-					<tr> 
-						<td id="typeClick"> <center> <%= type.name %> </center></td>
-					</tr>
-					<% end %>
-				</thead>
-			</table>
+			<b class="biggie aboutStart"><center> Our Menu:</center></b><br>
+				<!-- <thead id="rowHover"> -->
+					<ul id="btnList"> 
+						<% @typeArr[0..8].each do |type| %>
+						<li id="typeClick"> <center> <%= type.name %> </center></li>
+						<% end %>
+					</ul>
+				<!-- </thead> -->
 
 			<table class="productTable1 sortable" id="rowHover">
 			    <thead>
