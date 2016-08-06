@@ -21,35 +21,66 @@
 		</div>
 	</div>
 
-	
+
 
 	<div class="js-product closed">
-		<h2 class="closeProduct"> Select products to have delivered:</h2>
 
-		<table class="productTable">
-		    <thead>
-		      <tr>
-		        <th> Product Name </th>
-		        <th> Brand </th>
-		        <th> Type </th>
-		        <th> Quantity </th>
-		        <th> Price </th>
-		      </tr>
-		    </thead>
+		<div class="menu">
+			<b class="biggie aboutStart"> Our Current Stock:</b><br><br>
+			<table>
+				<thead id="rowHover">
+					<% @typeArr[0..5].each do |type| %>
+					<tr> 
+						<td id="typeClick"> <center> <%= type.name %> </center></td>
+					</tr>
+					<% end %>
+				</thead>
+			</table>
 
-		    <tbody>
-		      <% @productArr.each do |product| %>
-		        <tr>
-		          <td> <%= product.name %> </td>
-		          <td> <%= product.brand.name %> </td>
-		          <td> <%= product.type.name %> </td>
-		          <td> &nbsp;&nbsp;- 1 + </td>
-		          <td> $<%= product.price %> </td>
-		        </tr>
-		      <% end %>
-		    </tbody>
-		</table>
+			<table class="productTable1 sortable" id="rowHover">
+			    <thead>
+			      <tr>
+			        <th id="sortTable"> Product Name </th>
+			        <th id="sortTable"> Quantity </th>
+			        <th id="sortTable"> Price </th>
+			      </tr>
+			    </thead>
+
+			    <tbody>
+			      <% @productArr[0..9].each do |product| %>
+			        <tr>
+			          <td id="itemTable"> <%= product.name %> </td>
+			          <td id="itemTable"> <center> - 1 + </center></td>
+			          <td id="itemTable"> $<%= product.price %> </td>
+			        </tr>
+			      <% end %>
+			    </tbody>
+			</table>
+
+			<table class="productTable2 sortable" id="rowHover">
+			    <thead>
+			      <tr>
+			        <th id="sortTable"> Product Name </th>
+			        <th id="sortTable"> Quantity </th>
+			        <th id="sortTable"> Price </th>
+			      </tr>
+			    </thead>
+
+			    <tbody>
+			      <% @productArr[10..20].each do |product| %>
+			        <tr>
+			          <td id="itemTable"> <%= product.name %> </td>
+			          <td id="itemTable"> <center> - 1 + </center></td>
+			          <td id="itemTable"> $<%= product.price %> </td>
+			        </tr>
+			      <% end %>
+			    </tbody>
+			</table>
+
+		</div>
 	</div>
+
+
 
 	<div class="js-mapOrder">
 
