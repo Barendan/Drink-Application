@@ -7,7 +7,6 @@
 		Let the party come to you. 
 		<u>Wherever</u> you are. </span>
 
-
 		<div class="navRight">
 			<a href="/users/sign_in">
 				<button class="navLinks">
@@ -26,25 +25,22 @@
 
 	<div class="js-about">
 		<div class="holder">
-			<p class="summary">
-			<b class="aboutStart">How it Works :</b>
+			<b class="summary aboutStart">How it Works :</b>
 			<blockquote class="summary">
 				After a simply sign-up process, you will be redirected to the home page. From there, you will see a map displaying available drivers. Once you select a driver, you will then be shown the product's panel, at which point you may choose whichever drink's you prefer. Now don't worry, before anything is confirmed, we will double check the contents of your order via the final order summary panel.
 			</blockquote>
-				<b class="summary aboutStart">About : </b>
+			<b class="summary aboutStart">About : </b>
 				<blockquote class="summary">
 				<span class="summary aboutTitle">FireWater </span>
 					is a revolutionary new company that specializes in the delivery of spirits, wines, and beers for anything from high-profile events to the smallest backyard barbeques. <br>
 					We provide comfort and convenience by ensuring that you do not have to leave whatever event you are at, but most of all, you do not have to drive while under the influence. This last point being especially crucial in keeping our streets and families safe.
 				</blockquote>
-			</p>
 		</div>
 	</div>
 
-	<div class="js-previewMap closed">
-		<div class="js-showMap">
-			<h2>Here are the drivers currently in your area: </h2>
-			
+	<div class="js-mapPanel closed">
+		<div class="showMap">
+			<h2>Current Drivers in the Area: </h2>
 
 			<!-- Map code goes here -->
 			<div id="map"></div>
@@ -63,11 +59,11 @@
 		<table class="productTable sortable">
 		    <thead>
 		      <tr>
-		        <th><button> Product Name </button></th>
-		        <th><button> Brand </button></th>
-		        <th><button> Type </button></th>
-		        <th><button> Quantity </button></th>
-		        <th><button> Price </button></th>
+		        <th id="sort"> Product Name </th>
+		        <th id="sort"> Brand </th>
+		        <th id="sort"> Type </th>
+		        <th id="sort"> Quantity </th>
+		        <th id="sort"> Price </th>
 		      </tr>
 		    </thead>
 

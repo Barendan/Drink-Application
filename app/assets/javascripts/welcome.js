@@ -3,23 +3,23 @@
 
 $(document).on("turbolinks:load", function () {
 
-	// Welcome Preview Map Events
-	$('.js-previewMap').click( function () {
+	// Welcome Map Events
+	$('.js-mapPanel').click( function () {
+    
     function refreshMap () {
       google.maps.event.trigger(map, 'resize');
       // map.fitBounds(bounds);
       // Set center in here
-    }
-    $('.js-previewMap').animate({width:'90%'}, refreshMap);
-    $('.js-previewMap').removeClass('closed');
-
+    };
+    $('.js-mapPanel').animate({width:'90%'}, refreshMap);
+    $('.js-mapPanel').removeClass('closed');
 
     initialize();
 
-		if (! $('.js-about').hasClass('closed') ) {
-			$('.js-about').animate({width:'5%'});
-			$('.js-about').addClass('closed');
-		}
+    if (! $('.js-about').hasClass('closed') ) {
+      $('.js-about').animate({width:'5%'});
+      $('.js-about').addClass('closed');
+    }
 		if (! $('.js-preview').hasClass('closed') ) {
 			$('.js-preview').animate({width:'5%'});
 			$('.js-preview').addClass('closed');
@@ -37,17 +37,17 @@ $(document).on("turbolinks:load", function () {
 		$('.js-about').animate({width:'90%'});
 		$('.js-about').removeClass('closed');
 
-		if (! $('.js-previewMap').hasClass('closed') ) {
-			$('.js-previewMap').animate({width:'5%'});
-			$('.js-previewMap').addClass('closed');
+		if (! $('.js-mapPanel').hasClass('closed') ) {
+			$('.js-mapPanel').animate({width:'5%'});
+			$('.js-mapPanel').addClass('closed');
 		}
 		if (! $('.js-preview').hasClass('closed') ) {
 			$('.js-preview').animate({width:'5%'});
 			$('.js-preview').addClass('closed');
 		}
-		if ( $('.js-previewMap').hasClass('closed') ) {
-			$('.js-previewMap').animate({width:'5%'});
-			$('.js-previewMap').addClass('closed');
+		if ( $('.js-mapPanel').hasClass('closed') ) {
+			$('.js-mapPanel').animate({width:'5%'});
+			$('.js-mapPanel').addClass('closed');
 		}
 	});
 
@@ -56,17 +56,17 @@ $(document).on("turbolinks:load", function () {
 		$('.js-preview').animate({width:'90%'});
 		$('.js-preview').removeClass('closed');
 
-		if (! $('.js-previewMap').hasClass('closed') ) {
-			// $('.js-previewMap').animate({width:'5%'});
-			$('.js-previewMap').addClass('closed');
+		if (! $('.js-mapPanel').hasClass('closed') ) {
+			// $('.js-mapPanel').animate({width:'5%'});
+			$('.js-mapPanel').addClass('closed');
 		}
 		if (! $('.js-about').hasClass('closed') ) {
 			$('.js-about').animate({width:'5%'});
 			$('.js-about').addClass('closed');
 		}
 		// Moving to Review Panel from Map Panel fix
-		if ( $('.js-previewMap').hasClass('closed') ) {
-			$('.js-previewMap').animate({width:'90%'});
+		if ( $('.js-mapPanel').hasClass('closed') ) {
+			$('.js-mapPanel').animate({width:'90%'});
 			// $('.js-review').addClass('closed');
 		}
 	});
@@ -80,9 +80,9 @@ $(document).on("turbolinks:load", function () {
 		$('.js-product').animate({width:'90%'});
 		$('.js-product').removeClass('closed');
 
-		if (! $('.js-map').hasClass('closed') ) {
-			$('.js-map').animate({width:'5%'});
-			$('.js-map').addClass('closed');
+		if (! $('.js-mapOrder').hasClass('closed') ) {
+			$('.js-mapOrder').animate({width:'5%'});
+			$('.js-mapOrder').addClass('closed');
 		}
 		if (! $('.js-review').hasClass('closed') ) {
 			$('.js-review').animate({width:'5%'});
@@ -97,14 +97,9 @@ $(document).on("turbolinks:load", function () {
 
 
 	// Map Events
-	$('.js-closeMap').click( function (e) {
-		e.stopPropagation();
-		$('.js-map').animate({width:'5%'});
-		$('.js-map').addClass('closed');
-	});
-	$('.js-map').click( function () {
-		$('.js-map').animate({width:'90%'});
-		$('.js-map').removeClass('closed');
+	$('.js-mapOrder').click( function () {
+		$('.js-mapOrder').animate({width:'90%'});
+		$('.js-mapOrder').removeClass('closed');
 
 		if (! $('.js-product').hasClass('closed') ) {
 			$('.js-product').animate({width:'5%'});
@@ -129,9 +124,9 @@ $(document).on("turbolinks:load", function () {
 			// $('.js-product').animate({width:'5%'});
 			$('.js-product').addClass('closed');
 		}
-		if (! $('.js-map').hasClass('closed') ) {
-			$('.js-map').animate({width:'5%'});
-			$('.js-map').addClass('closed');
+		if (! $('.js-mapOrder').hasClass('closed') ) {
+			$('.js-mapOrder').animate({width:'5%'});
+			$('.js-mapOrder').addClass('closed');
 		}
 		// Moving to Review Panel from Map Panel fix
 		if ( $('.js-product').hasClass('closed') ) {
@@ -144,6 +139,8 @@ $(document).on("turbolinks:load", function () {
 		$('.js-review').animate({width:'5%'});
 		$('.js-review').addClass('closed');
 	});
+
+
 
 // ------------------------------------------------
 	// Map Starts here
