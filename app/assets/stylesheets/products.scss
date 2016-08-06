@@ -3,15 +3,14 @@
 	top: 20px;
 	background-color: white;
 	margin: 0px 20px 20px 30px;
-	// margin: auto;
 	opacity: 0.8;
 	width: 80%;
-	padding: 1px 10px 10px 10px;
-	// padding: auto;
+	padding: 10px 15px;
 	border-style: solid;
 	border-width: 2px;
-	border-color: white;
+	border-color: black;
 	border-radius: 10px;
+	box-shadow: 5px 5px 10px #000;
 }
 //  About Panel (Welcome Page)
 .js-about {
@@ -26,10 +25,14 @@
 	// border-width: 2px;
 	// border-color: white;
 }
-.summary {
+.biggie {
 	// color: white;
 	font-size: 24px;
 	// text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.aboutStart {
+	color: red;
+	text-shadow: none;
 }
 
 // Preview Map display panel
@@ -48,8 +51,9 @@
 	text-align: center;
 	z-index: -1;
 }
+
 // Product preview (Welcome Page)
-.js-preview {
+.js-previewPanel {
 	background: url("store_home1.jpg") no-repeat center center fixed;
 	position: absolute;
 	top: 90px;
@@ -60,11 +64,59 @@
 	border-width: 2px;
 	border-color: white;
 }
-.productTable {
+.menu {
+	float: left;
+	overflow: hidden;
+	position: relative;
+	top: 20px;
 	background-color: white;
-	margin: auto;
-	padding: 20px;
-	opacity: 0.7;
+	margin: 0px 20px 20px 30px;
+	opacity: 0.9;
+	width: 85%;
+	height: 75%;
+	padding: 10px 15px;
+	border-style: outset;
+	border-width: 5px;
+	border-color: #000;
+	box-shadow: 5px 5px 10px #000;
+}
+.productTable1 {
+	position: relative;
+	top: -313px;
+	left: 100px;
+}
+.productTable2 {
+	position: relative;
+	top: -777px;
+	left: 435px;
+}
+#sortTable {
+	background-color: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #039;
+    padding: 8px;
+}
+#sort:hover {
+	cursor: pointer;
+}
+#itemTable {
+	background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+    padding: 10px;
+}
+#typeClick {
+	background: #e8edff;
+    border-bottom: 7px solid #FFF;
+    border-top: 7px solid #FFF;
+    color: #669;
+    padding: 10px;
+}
+#rowHover tr:hover td {
+	background: #d0dafd;
+    color: #000;
 }
 
 // --------------------------------------------
@@ -100,6 +152,7 @@
 	border-color: white;
 	z-index: 1;
 }
+
 // Review display panel
 .js-review {
 	background: url("welcome2.jpg") no-repeat center center fixed;
@@ -131,29 +184,15 @@
 
 // Doesn't appear until panel is opened
 .closed .holder,
-.closed .aboutTitle,
 .closed .showMap,
-// .closed .js-closeMap,
-// .closed .product,
-.closed .productTable {
+.closed .menu {
 	display: none;
 }
 
 
 
 
-
-
-// #map-container {
-//    height: 400px;
-//    border-radius: 16px 16px;
-//    border-color: #fff;
-//    border-style: solid;
-//    box-shadow: 2px 2px 10px #B1B1B1;
-//    margin-top: 25px;
-//    border-width: 7px;
-//  }
-.js-showMap {
+.showMap {
 	height: 100%;
 }
 #map {
@@ -161,12 +200,14 @@
    width: 85%;
    margin: auto;
    opacity: 0.9;
- }
-#sort {
-	background-color: grey;
 }
-#sort:hover {
-	cursor: pointer;
+
+blockquote {
+	display: block;
+    -webkit-margin-before: 16px;
+    -webkit-margin-after: 16px;
+    -webkit-margin-start: 40px;
+    -webkit-margin-end: 40px;
 }
 
 

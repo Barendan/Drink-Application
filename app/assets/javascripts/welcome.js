@@ -20,9 +20,9 @@ $(document).on("turbolinks:load", function () {
       $('.js-about').animate({width:'5%'});
       $('.js-about').addClass('closed');
     }
-		if (! $('.js-preview').hasClass('closed') ) {
-			$('.js-preview').animate({width:'5%'});
-			$('.js-preview').addClass('closed');
+		if (! $('.js-previewPanel').hasClass('closed') ) {
+			$('.js-previewPanel').animate({width:'5%'});
+			$('.js-previewPanel').addClass('closed');
 		}
 	});
 	// $('.js-closeProduct').click( function (e) {
@@ -41,9 +41,9 @@ $(document).on("turbolinks:load", function () {
 			$('.js-mapPanel').animate({width:'5%'});
 			$('.js-mapPanel').addClass('closed');
 		}
-		if (! $('.js-preview').hasClass('closed') ) {
-			$('.js-preview').animate({width:'5%'});
-			$('.js-preview').addClass('closed');
+		if (! $('.js-previewPanel').hasClass('closed') ) {
+			$('.js-previewPanel').animate({width:'5%'});
+			$('.js-previewPanel').addClass('closed');
 		}
 		if ( $('.js-mapPanel').hasClass('closed') ) {
 			$('.js-mapPanel').animate({width:'5%'});
@@ -51,10 +51,10 @@ $(document).on("turbolinks:load", function () {
 		}
 	});
 
-	//Welcome Preview Product events
-	$('.js-preview').click( function () {
-		$('.js-preview').animate({width:'90%'});
-		$('.js-preview').removeClass('closed');
+	//Welcome previewPanel Product events
+	$('.js-previewPanel').click( function () {
+		$('.js-previewPanel').animate({width:'90%'});
+		$('.js-previewPanel').removeClass('closed');
 
 		if (! $('.js-mapPanel').hasClass('closed') ) {
 			// $('.js-mapPanel').animate({width:'5%'});
@@ -175,14 +175,14 @@ $(document).on("turbolinks:load", function () {
   startLoc[1] = 'kendall, Miami';
   startLoc[2] = 'coconut grove, Miami';
   startLoc[3] = 'brickell, Miami';
-  startLoc[4] = 'North Miami, Florida';
+  startLoc[4] = 'north Miami, Florida';
 
   var endLoc = new Array();
   endLoc[0] = 'North Miami, Florida';
   endLoc[1] = 'brickell, Miami';
   endLoc[2] = 'brickell, Miami';
   endLoc[3] = 'south beach, Miami';
-  endLoc[4] = 'Miami Beach, Florida';
+  endLoc[4] = 'miami Beach, Florida';
 
 
   var Colors = ["#FF0000", "#00FF00", "#0000FF"];
@@ -398,9 +398,6 @@ $(document).on("turbolinks:load", function () {
           timerHandle[index] = setTimeout(start,2000);  // Allow time for the initial map display
   }  
 
-  function removeLine() {
-    map.setMap(null);
-  }
 
 
 

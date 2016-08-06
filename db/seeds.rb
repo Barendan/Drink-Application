@@ -15,7 +15,7 @@ User.create!(
 	email: 'barendan@gmail.com',
 	password: 'junkfood',
 	driver_license: 'B651-169-37-140-0',
-	license_pic: '',
+	license_pic: Rails.root.join("app/assets/images/myId.jpg").open,
 	address: '1077 se 6th ave, Dania Beach, Fl 33004',
 	phone: '305-414-9776',
 	birthday: DateTime.new(1992, 04, 20),
