@@ -3,26 +3,30 @@
 
 $(document).on("turbolinks:load", function () {
 
+  $('.panelName1').hide();
+
 	// Welcome Map Events
 	$('.js-mapPanel').click( function () {
-    
     function refreshMap () {
       google.maps.event.trigger(map, 'resize');
       // map.fitBounds(bounds);
       // Set center in here
     };
-    $('.js-mapPanel').animate({width:'90%'}, refreshMap);
+    $('.js-mapPanel').animate({width:'90%', left:'5%'}, refreshMap);
     $('.js-mapPanel').removeClass('closed');
+    $('.panelName2').hide();
 
     initialize();
 
     if (! $('.js-about').hasClass('closed') ) {
       $('.js-about').animate({width:'5%'});
       $('.js-about').addClass('closed');
+      $('.panelName1').show();
     }
 		if (! $('.js-previewPanel').hasClass('closed') ) {
 			$('.js-previewPanel').animate({width:'5%'});
 			$('.js-previewPanel').addClass('closed');
+      $('.panelName3').show();
 		}
 	});
 	// $('.js-closeProduct').click( function (e) {
@@ -36,18 +40,24 @@ $(document).on("turbolinks:load", function () {
 	$('.js-about').click( function () {
 		$('.js-about').animate({width:'90%'});
 		$('.js-about').removeClass('closed');
+    $('.panelName1').hide();
+    $('.js-mapPanel').animate({left:'90%'});
 
-		if (! $('.js-mapPanel').hasClass('closed') ) {
-			$('.js-mapPanel').animate({width:'5%'});
-			$('.js-mapPanel').addClass('closed');
+    if (! $('.js-mapPanel').hasClass('closed') ) {
+      $('.js-mapPanel').animate({width:'5%'});
+      $('.js-mapPanel').addClass('closed');
+      $('.panelName2').show();
 		}
 		if (! $('.js-previewPanel').hasClass('closed') ) {
 			$('.js-previewPanel').animate({width:'5%'});
 			$('.js-previewPanel').addClass('closed');
+      $('.panelName3').show();
 		}
 		if ( $('.js-mapPanel').hasClass('closed') ) {
 			$('.js-mapPanel').animate({width:'5%'});
 			$('.js-mapPanel').addClass('closed');
+      $('.panelName2').show();
+      // $('.js-mapPanel').animate({left:'90%'});
 		}
 	});
 
@@ -55,20 +65,23 @@ $(document).on("turbolinks:load", function () {
 	$('.js-previewPanel').click( function () {
 		$('.js-previewPanel').animate({width:'90%'});
 		$('.js-previewPanel').removeClass('closed');
+    $('.panelName3').hide();
 
 		if (! $('.js-mapPanel').hasClass('closed') ) {
-			// $('.js-mapPanel').animate({width:'5%'});
+			$('.js-mapPanel').animate({width:'5%', left: '5%'});
 			$('.js-mapPanel').addClass('closed');
+      $('.panelName2').show();
 		}
 		if (! $('.js-about').hasClass('closed') ) {
 			$('.js-about').animate({width:'5%'});
 			$('.js-about').addClass('closed');
+      $('.panelName1').show();
 		}
-		// Moving to Review Panel from Map Panel fix
-		if ( $('.js-mapPanel').hasClass('closed') ) {
-			$('.js-mapPanel').animate({width:'90%'});
-			// $('.js-review').addClass('closed');
-		}
+    if ( $('.js-mapPanel').hasClass('closed') ) {
+      $('.js-mapPanel').animate({width:'5%', left: '5%'});
+      // $('.js-mapPanel').addClass('closed');
+      // $('.panelName2').show();
+    }
 	});
 
 

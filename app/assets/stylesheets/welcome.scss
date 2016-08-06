@@ -59,7 +59,16 @@
 }
 
 
-// Welcome Page
+.panelName1,
+.panelName2,
+.panelName3 {
+	font-size: 48px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+
 .title {
 	// display: inline;
 	font-size: 48px;
@@ -176,7 +185,6 @@ body {
 	// height: 50px;
 	// width: 30px;
 }
-
 
 
 
