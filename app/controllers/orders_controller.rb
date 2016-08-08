@@ -2,15 +2,8 @@ class OrdersController < ApplicationController
 	# before_action :authorize_user
 	before_action :set_order, only: [:show, :edit, :update, :destroy]
 
-
-	# All orders for specific user
-	def index
-		@orders = Order.all
-	end
-
 	# Show individual order details
 	def show
-		@order = Order.find(params[:id])
 	end
 
 	# Request order form
@@ -19,7 +12,7 @@ class OrdersController < ApplicationController
 		@order = Order.new
     	@productArr = Product.all
     	@typeArr = Type.all
-
+    	# @userOrders = @user.orders.all
 
 		greetings = [
 			"It's 5 o'clock somewhere,",
@@ -52,7 +45,7 @@ class OrdersController < ApplicationController
 			@product_order.save
 			redirect_to("/users/#{@current_user.id}/orders/#{@order.id}")
     	else 
-			flash[:alert] = "Your order had an error."
+			flash[:alert] = "Your order has an error. Please try again."
     		render 'new'
 		end
     end

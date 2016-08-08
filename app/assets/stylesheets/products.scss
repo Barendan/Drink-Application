@@ -15,7 +15,7 @@
 //  About Panel (Welcome Page)
 .js-about {
 	// background: url("store_home1.jpg") no-repeat center center fixed;
-	// background-color: black;
+	background-color: transparent;
 	position: absolute;
 	top: 90px;
 	left: 0px;
@@ -24,11 +24,6 @@
 	border: dashed;
 	border-width: 2px;
 	border-color: white;
-}
-.biggie {
-	// color: white;
-	font-size: 24px;
-	// text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .aboutStart {
 	color: red;
@@ -72,7 +67,7 @@
 	top: 20px;
 	// background-color: white;
 	margin: 0px 20px 20px 30px;
-	opacity: 0.9;
+	// opacity: 0.9;
 	width: 85%;
 	height: 75%;
 	padding: 10px 15px;
@@ -91,16 +86,10 @@
 	// border-width: 2px;
 	// border-color: black;
 }
-table {
-	height: 500px;
-	overflow-y: scroll;
-	display: block;
-}
 .productTable1 {
 	// position: absolute;
 	// top: 62px;
 	// left: 150px;
-	width: 475px;
 	margin: auto;
 	border-style: solid;
 	border-width: 2px 2px 2px 2px;
@@ -122,7 +111,7 @@ table {
 #sortTable {
 	background-color: #966F33;
 	border-top: 4px solid #966F33;
-    // border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     color: #000;
     padding: 8px 12px;
 }
@@ -182,7 +171,7 @@ table {
 	border: dashed;
 	border-width: 2px;
 	border-color: white;
-	color: white;
+	// color: white;
 	text-align: center;
 	z-index: -1;
 }
@@ -224,7 +213,7 @@ table {
 	opacity: 0.8;
 }
 .closed:hover {
-	background-color: black;
+	// background-color: black;
 	opacity: 1.0;
 	filter: alpha(opacity=100);
 }
@@ -251,10 +240,11 @@ table {
 
 blockquote {
 	display: block;
+	font-size: 18px;
     -webkit-margin-before: 16px;
-    -webkit-margin-after: 16px;
+    -webkit-margin-after: 36px;
     -webkit-margin-start: 40px;
-    -webkit-margin-end: 40px;
+    -webkit-margin-end: 60px;
 }
 table { 
 	border-collapse:collapse;

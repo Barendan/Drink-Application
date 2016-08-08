@@ -3,6 +3,12 @@
 
 $(document).on("turbolinks:load", function () {
 
+  // $('#sortTable').click( function() {
+  //   $(this).
+  // });
+
+
+
   $('.panelName1').hide();
   $('.panelName11').hide();
 
@@ -10,7 +16,7 @@ $(document).on("turbolinks:load", function () {
 	$('.js-mapPanel').click( function () {
     function refreshMap () {
       google.maps.event.trigger(map, 'resize');
-      // map.fitBounds(bounds);
+      map.fitBounds(bounds);
       // Set center in here
     };
     $('.js-mapPanel').animate({width:'90%', left:'5%'}, refreshMap);
@@ -228,7 +234,7 @@ $(document).on("turbolinks:load", function () {
       }
 
       map = new google.maps.Map(document.getElementById("map"), myOptions);
-      address = 'Miami'
+      address = 'Downtown Miami'
       geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': address}, function(results, status) {
        map.fitBounds(results[0].geometry.viewport);

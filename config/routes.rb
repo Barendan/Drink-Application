@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, except: [:new, :create] do 
-    resources :orders
+    resources :orders, except: [:index]
   end
-  resources :products, only: [:index]
 
   get '/home', to: 'orders#new', as: 'home'
 
