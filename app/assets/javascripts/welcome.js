@@ -91,7 +91,7 @@ $(document).on("turbolinks:load", function () {
 
 	// Product Events
 	$('.js-product').click( function () {
-		$('.js-product').animate({width:'90%'});
+		$('.js-product').animate({width:'90%', left: "5%"});
 		$('.js-product').removeClass('closed');
     $('.panelName22').hide();
 
@@ -117,10 +117,12 @@ $(document).on("turbolinks:load", function () {
 		$('.js-mapOrder').animate({width:'90%'});
     $('.js-mapOrder').removeClass('closed');
 		$('.panelName11').hide();
+    $('.js-product').animate({left:'90%'});
 
 		if (! $('.js-product').hasClass('closed') ) {
 			$('.js-product').animate({width:'5%'});
       $('.js-product').addClass('closed');
+      // $('.js-product').animate({left:'90%'});
 			$('.panelName22').show();
 		}
 		if (! $('.js-review').hasClass('closed') ) {
@@ -129,8 +131,8 @@ $(document).on("turbolinks:load", function () {
       $('.panelName33').show();
 		}
 		if ( $('.js-product').hasClass('closed') ) {
-			$('.js-product').animate({width:'5%'});
-			$('.js-product').addClass('closed');
+      // $('.js-product').animate({width:'5%'});
+			// $('.js-product').addClass('closed');
       $('.panelName22').show();
 		}
 	});
@@ -149,7 +151,7 @@ $(document).on("turbolinks:load", function () {
 		if (! $('.js-mapOrder').hasClass('closed') ) {
 			$('.js-mapOrder').animate({width:'5%'});
 			$('.js-mapOrder').addClass('closed');
-      $('.panelName22').show();
+      $('.panelName11').show();
 		}
 		// Moving to Review Panel from Map Panel fix
 		if ( $('.js-product').hasClass('closed') ) {
@@ -159,26 +161,6 @@ $(document).on("turbolinks:load", function () {
 		}
 	});
 
-  // $('.js-previewPanel').click( function () {
-  //   $('.js-previewPanel').animate({width:'90%'});
-  //   $('.js-previewPanel').removeClass('closed');
-  //   $('.panelName3').hide();
-
-  //   if (! $('.js-mapPanel').hasClass('closed') ) {
-  //     $('.js-mapPanel').animate({width:'5%', left: '5%'});
-  //     $('.js-mapPanel').addClass('closed');
-  //     $('.panelName2').show();
-  //   }
-  //   if (! $('.js-about').hasClass('closed') ) {
-  //     $('.js-about').animate({width:'5%'});
-  //     $('.js-about').addClass('closed');
-  //     $('.panelName1').show();
-  //   }
-  //   if ( $('.js-mapPanel').hasClass('closed') ) {
-  //     $('.js-mapPanel').animate({width:'5%', left: '5%'});
-  //     // $('.js-mapPanel').addClass('closed');
-  //     // $('.panelName2').show();
-  //   }
 
 // ------------------------------------------------
 	// Map Starts here

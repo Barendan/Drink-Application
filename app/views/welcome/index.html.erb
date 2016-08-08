@@ -65,37 +65,39 @@
 			P<br>R<br>O<br>D<br>U<br>C<br>T<br>S
 		</p>
 		<div class="menu">
-
 		
-			<b class="biggie aboutStart"><center> Our Menu:</center></b><br>
-				<!-- <thead id="rowHover"> -->
+			<b class="biggie aboutStart"><center> <u>Our Menu</u>:</center></b><br>
+
 					<ul id="btnList"> 
 						<% @typeArr[0..8].each do |type| %>
 						<li id="typeClick"> <center> <%= type.name %> </center></li>
 						<% end %>
 					</ul>
-				<!-- </thead> -->
-			<div class="scroll">
-				<table class="productTable1 sortable" id="rowHover">
-				    <thead>
-				      <tr>
-				        <th id="sortTable"> Product Name </th>
-				        <th id="sortTable"> Quantity </th>
-				        <th id="sortTable"> Price </th>
-				      </tr>
-				    </thead>
 
-				    <tbody>
-				      <% @productArr.each do |product| %>
-				        <tr>
-				          <td id="itemTable"> <%= product.name %> </td>
-				          <td id="itemTable"> <center> - 1 + </center></td>
-				          <td id="itemTable"> $<%= product.price %> </td>
-				        </tr>
-				      <% end %>
-				    </tbody>
-				</table>
-			</div>
+			<table class="productTable1 sortable" id="rowHover">
+			    <thead>
+			      <tr>
+			        <th id="sortTable"> Product Name </th>
+			        <th id="sortTable"> Size </th>
+			        <th id="sortTable"> Quantity </th>
+			        <th id="sortTable"> Price </th>
+			        <th id="sortTable"> Type </th>
+			      </tr>
+			    </thead>
+
+			    <tbody>
+			      <% @productArr.each do |product| %>
+			        <tr>
+			          <td id="itemTable"> <%= product.name %> </td>
+			          <td id="itemTable"> <%= product.size %> </td>
+			          <td id="itemTable"> <center> - 1 + </center></td>
+			          <td id="itemTable"> $<%= product.price %> </td>
+			          <td id="itemTable"> <%= product.type.name %> </td>
+			        </tr>
+			      <% end %>
+			    </tbody>
+			</table>
+
 
 			<table class="productTable2 sortable" id="rowHover">
 			    <thead>
