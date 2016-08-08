@@ -75,26 +75,27 @@
 						<% end %>
 					</ul>
 				<!-- </thead> -->
+			<div class="scroll">
+				<table class="productTable1 sortable" id="rowHover">
+				    <thead>
+				      <tr>
+				        <th id="sortTable"> Product Name </th>
+				        <th id="sortTable"> Quantity </th>
+				        <th id="sortTable"> Price </th>
+				      </tr>
+				    </thead>
 
-			<table class="productTable1 sortable" id="rowHover">
-			    <thead>
-			      <tr>
-			        <th id="sortTable"> Product Name </th>
-			        <th id="sortTable"> Quantity </th>
-			        <th id="sortTable"> Price </th>
-			      </tr>
-			    </thead>
-
-			    <tbody>
-			      <% @productArr[0..9].each do |product| %>
-			        <tr>
-			          <td id="itemTable"> <%= product.name %> </td>
-			          <td id="itemTable"> <center> - 1 + </center></td>
-			          <td id="itemTable"> $<%= product.price %> </td>
-			        </tr>
-			      <% end %>
-			    </tbody>
-			</table>
+				    <tbody>
+				      <% @productArr.each do |product| %>
+				        <tr>
+				          <td id="itemTable"> <%= product.name %> </td>
+				          <td id="itemTable"> <center> - 1 + </center></td>
+				          <td id="itemTable"> $<%= product.price %> </td>
+				        </tr>
+				      <% end %>
+				    </tbody>
+				</table>
+			</div>
 
 			<table class="productTable2 sortable" id="rowHover">
 			    <thead>
@@ -108,7 +109,7 @@
 			    <tbody>
 			      <% @productArr[10..20].each do |product| %>
 			        <tr>
-			          <td id="itemTable"> <%= product.name %> </td>
+			          <td id="itemTable"> <center><%= product.name %> </center></td>
 			          <td id="itemTable"> <center> - 1 + </center></td>
 			          <td id="itemTable"> $<%= product.price %> </td>
 			        </tr>

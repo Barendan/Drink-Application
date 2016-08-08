@@ -4,6 +4,7 @@
 $(document).on("turbolinks:load", function () {
 
   $('.panelName1').hide();
+  $('.panelName11').hide();
 
 	// Welcome Map Events
 	$('.js-mapPanel').click( function () {
@@ -40,8 +41,8 @@ $(document).on("turbolinks:load", function () {
 	$('.js-about').click( function () {
 		$('.js-about').animate({width:'90%'});
 		$('.js-about').removeClass('closed');
-    $('.panelName1').hide();
     $('.js-mapPanel').animate({left:'90%'});
+    $('.panelName1').hide();
 
     if (! $('.js-mapPanel').hasClass('closed') ) {
       $('.js-mapPanel').animate({width:'5%'});
@@ -92,14 +93,17 @@ $(document).on("turbolinks:load", function () {
 	$('.js-product').click( function () {
 		$('.js-product').animate({width:'90%'});
 		$('.js-product').removeClass('closed');
+    $('.panelName22').hide();
 
 		if (! $('.js-mapOrder').hasClass('closed') ) {
 			$('.js-mapOrder').animate({width:'5%'});
 			$('.js-mapOrder').addClass('closed');
+      $('.panelName11').show();
 		}
 		if (! $('.js-review').hasClass('closed') ) {
 			$('.js-review').animate({width:'5%'});
 			$('.js-review').addClass('closed');
+      $('.panelName33').show();
 		}
 	});
 	// $('.js-closeProduct').click( function (e) {
@@ -108,23 +112,26 @@ $(document).on("turbolinks:load", function () {
 	// 	$('.js-product').addClass('closed');
 	// });
 
-
 	// Map Events
 	$('.js-mapOrder').click( function () {
 		$('.js-mapOrder').animate({width:'90%'});
-		$('.js-mapOrder').removeClass('closed');
+    $('.js-mapOrder').removeClass('closed');
+		$('.panelName11').hide();
 
 		if (! $('.js-product').hasClass('closed') ) {
 			$('.js-product').animate({width:'5%'});
-			$('.js-product').addClass('closed');
+      $('.js-product').addClass('closed');
+			$('.panelName22').show();
 		}
 		if (! $('.js-review').hasClass('closed') ) {
 			$('.js-review').animate({width:'5%'});
-			$('.js-review').addClass('closed');
+      $('.js-review').addClass('closed');
+      $('.panelName33').show();
 		}
 		if ( $('.js-product').hasClass('closed') ) {
 			$('.js-product').animate({width:'5%'});
 			$('.js-product').addClass('closed');
+      $('.panelName22').show();
 		}
 	});
 
@@ -132,28 +139,46 @@ $(document).on("turbolinks:load", function () {
 	$('.js-review').click( function () {
 		$('.js-review').animate({width:'90%'});
 		$('.js-review').removeClass('closed');
+    $('.panelName33').hide();
 
 		if (! $('.js-product').hasClass('closed') ) {
 			// $('.js-product').animate({width:'5%'});
 			$('.js-product').addClass('closed');
+      $('.panelName22').show();
 		}
 		if (! $('.js-mapOrder').hasClass('closed') ) {
 			$('.js-mapOrder').animate({width:'5%'});
 			$('.js-mapOrder').addClass('closed');
+      $('.panelName22').show();
 		}
 		// Moving to Review Panel from Map Panel fix
 		if ( $('.js-product').hasClass('closed') ) {
-			$('.js-product').animate({width:'90%'});
+			$('.js-product').animate({width:'5%', left: '5%'});
 			// $('.js-review').addClass('closed');
+      // $('.panelName22').show();
 		}
 	});
-	$('.js-closereview').click( function (e) {
-		e.stopPropagation();
-		$('.js-review').animate({width:'5%'});
-		$('.js-review').addClass('closed');
-	});
 
+  // $('.js-previewPanel').click( function () {
+  //   $('.js-previewPanel').animate({width:'90%'});
+  //   $('.js-previewPanel').removeClass('closed');
+  //   $('.panelName3').hide();
 
+  //   if (! $('.js-mapPanel').hasClass('closed') ) {
+  //     $('.js-mapPanel').animate({width:'5%', left: '5%'});
+  //     $('.js-mapPanel').addClass('closed');
+  //     $('.panelName2').show();
+  //   }
+  //   if (! $('.js-about').hasClass('closed') ) {
+  //     $('.js-about').animate({width:'5%'});
+  //     $('.js-about').addClass('closed');
+  //     $('.panelName1').show();
+  //   }
+  //   if ( $('.js-mapPanel').hasClass('closed') ) {
+  //     $('.js-mapPanel').animate({width:'5%', left: '5%'});
+  //     // $('.js-mapPanel').addClass('closed');
+  //     // $('.panelName2').show();
+  //   }
 
 // ------------------------------------------------
 	// Map Starts here
@@ -199,6 +224,8 @@ $(document).on("turbolinks:load", function () {
 
 
   var Colors = ["#FF0000", "#00FF00", "#0000FF"];
+  var DriverArr = ["Nizar", "Josh", "Alia", "Nick"];
+  // var Driver = DriverArr[Math.floor(Math.random() * DriverArr.length)];
 
 
   function initialize() { 
@@ -207,7 +234,6 @@ $(document).on("turbolinks:load", function () {
       return;
     }
       console.log("MAP", map);
-    
 
     infowindow = new google.maps.InfoWindow(
       { 
@@ -229,27 +255,6 @@ $(document).on("turbolinks:load", function () {
     setRoutes();
     } 
 
-
-  function createMarker(latlng, label, html) {
-    console.log("createMarker");
-  // alert("createMarker("+latlng+","+label+","+html+","+color+")");
-      var contentString = '<b>'+label+'</b><br>'+html;
-      var marker = new google.maps.Marker({
-          position: latlng,
-          map: map,
-          title: label,
-          zIndex: Math.round(latlng.lat()*-100000)<<5
-          });
-          marker.myname = label;
-
-
-      google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(contentString); 
-          infowindow.open(map,marker);
-          });
-      return marker;
-  }  
-
   function setRoutes(){   
 
       var directionsDisplay = new Array();
@@ -258,7 +263,8 @@ $(document).on("turbolinks:load", function () {
         var rendererOptions = {
             map: map,
             suppressMarkers : true,
-            preserveViewport: true
+            preserveViewport: true,
+            suppressPolylines: true,
         }
         directionsService = new google.maps.DirectionsService();
 
@@ -271,6 +277,35 @@ $(document).on("turbolinks:load", function () {
 
         directionsService.route(request,makeRouteCallback(i,directionsDisplay[i]));
   }   
+  function createMarker(latlng, label, html) {
+    console.log("createMarker", label);
+  // alert("createMarker("+latlng+","+label+","+html+","+color+")");
+      var contentString = '<b>'+label+'</b><br>'+html;
+      var carIcon = {
+          url: 'http://i68.tinypic.com/imp9c2.png',
+          // This marker is 20 pixels wide by 32 pixels high.
+          scaledSize: new google.maps.Size(20, 32),
+          // The origin for this image is (0, 0).
+          // origin: new google.maps.Point(10, 10),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          // anchor: new google.maps.Point(0, 32)
+      }
+      var marker = new google.maps.Marker({
+          position: latlng,
+          map: map,
+          title: label,
+          icon: carIcon,
+          zIndex: Math.round(latlng.lat()*-100000)<<5
+          });
+          marker.myname = label;
+
+
+      google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(contentString); 
+          infowindow.open(map,marker);
+          });
+      return marker;
+  }  
 
 
   function makeRouteCallback(routeNum,disp){
@@ -293,13 +328,13 @@ $(document).on("turbolinks:load", function () {
           polyline[routeNum] = new google.maps.Polyline({
           path: [],
           strokeColor: '#FFF',
-          strokeWeight: 0
+          strokeWeight: 3
           });
 
           poly2[routeNum] = new google.maps.Polyline({
           path: [],
-          strokeColor: '#FFF',
-          strokeWeight: 0
+          strokeColor: '#000',
+          strokeWeight: 3
           });     
 
 
@@ -319,7 +354,7 @@ $(document).on("turbolinks:load", function () {
               startLocation[routeNum].latlng = legs[i].start_location;
               startLocation[routeNum].address = legs[i].start_address;
               // marker = google.maps.Marker({map:map,position: startLocation.latlng});
-              marker[routeNum] = createMarker(legs[i].start_location,"start"+routeNum,legs[i].start_address,"green");
+              marker[routeNum] = createMarker(legs[i].start_location, DriverArr[Math.floor(Math.random() * DriverArr.length)],"Delivering to : "+legs[i].start_address,"green");
             }
             endLocation[routeNum].latlng = legs[i].end_location;
             endLocation[routeNum].address = legs[i].end_address;
@@ -397,30 +432,26 @@ $(document).on("turbolinks:load", function () {
   //-------------------------------------------------------------------------
 
   function startAnimation(index) {
-    console.log("startAnimation");
+    // console.log("startAnimation");
 
-          console.log("backtothefuture",timerHandle);
+          // console.log("timerHandle:",timerHandle);
           if (timerHandle[index]) clearTimeout(timerHandle[index]);
           eol[index]=polyline[index].Distance();
           // map.setCenter(polyline[index].getPath().getAt(0));
 
-          poly2[index] = new google.maps.Polyline({path: [polyline[index].getPath().getAt(0)], strokeColor:"#FFF", strokeWeight:0});
+          poly2[index] = new google.maps.Polyline({path: [polyline[index].getPath().getAt(0)], strokeColor:"#FFF", strokeWeight: 3});
           function start () {
             animate(index,50)
           }
-          timerHandle[index] = setTimeout(start,2000);  // Allow time for the initial map display
+          timerHandle[index] = setTimeout(start,3000);  // Allow time for the initial map display
   }  
 
-
-
-
-// Flashing Title but CSS is already doing this 
+// Flashing Title; Went with CSS only version of this
 // 	var flashBaby = $('.title');
 	
 // 	setInterval(function() {
 //    	flashBaby.toggleClass('blinking');
 // 	}, 700);
 
-   
 
 })
