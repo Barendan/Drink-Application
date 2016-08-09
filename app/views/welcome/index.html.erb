@@ -49,7 +49,7 @@
 			D<br>R<br>I<br>V<br>E<br>R<br>S
 		</p>
 		<div class="showMap">
-			<h2>Current Drivers in the Area: </h2>
+			<h2 class="highlight">Current Drivers in the area: </h2>
 
 			<!-- Map code goes here -->
 			<div id="map"></div>
@@ -67,8 +67,8 @@
 			P<br>R<br>O<br>D<br>U<br>C<br>T<br>S
 		</p>
 		<div class="menu">
+			<h2 class="highlight">Alcohol Menu</h2>
 		
-			<b class="biggie aboutStart"><center> <u>Our Menu</u>:</center></b><br>
 
 					<ul id="btnList"> 
 						<% @typeArr[0..8].each do |type| %>
@@ -89,11 +89,11 @@
 
 			    <tbody>
 			      <% @productArr.each do |product| %>
-			        <tr>
-			          <td id="itemTable"> <%= product.name %> </td>
-			          <td id="itemTable"> <%= product.size %> </td>
+			        <tr class="js-bottle">
+			          <td id="itemTable" class="1" data-name="<%=product.name%>"> <%= product.name %> </td>
+			          <td id="itemTable" class="2" data-size="<%=product.size%>"> <%= product.size %> </td>
 			          <td id="itemTable"> <center> - 1 + </center></td>
-			          <td id="itemTable"> $<%= product.price %> </td>
+			          <td id="itemTable" class="3" data-price="<%=product.price%>"> $<%= product.price %> </td>
 			          <td id="itemTable"> <%= product.type.name %> </td>
 			        </tr>
 			      <% end %>

@@ -25,10 +25,6 @@
 	border-width: 2px;
 	border-color: white;
 }
-.aboutStart {
-	color: red;
-	text-shadow: none;
-}
 
 // Preview Map display panel
 .js-mapPanel {
@@ -42,9 +38,27 @@
 	border: dashed;
 	border-width: 2px;
 	border-color: white;
-	color: red;
-	text-align: center;
+	// color: red;
 	z-index: -1;
+}
+.showMap {
+	height: 100%;
+	text-align: center;
+	
+}
+.highlight {
+	background-color: white;
+	text-align: center;
+    border: solid black 2px;
+    width: 400px;
+}
+#map {
+   height: 70%;
+   width: 85%;
+   margin: auto;
+   opacity: 0.9;
+   border: solid black 2px;
+   box-shadow: 1px 1px 5px #000;
 }
 
 // Product preview (Welcome Page)
@@ -60,17 +74,12 @@
 	border-color: white;
 }
 .menu {
-	// float: left;
-	// overflow: auto;
-	// text-align: center;
 	position: relative;
-	top: 20px;
-	// background-color: white;
-	margin: 0px 20px 20px 30px;
+	// top: 20px;
 	// opacity: 0.9;
-	width: 85%;
+	// width: 85%;
 	height: 75%;
-	padding: 10px 15px;
+	// padding: 10px 15px;
 	// border-style: outset;
 	// border-width: 5px;
 	// border-color: #000;
@@ -228,15 +237,7 @@
 
 
 
-.showMap {
-	height: 100%;
-}
-#map {
-   height: 70%;
-   width: 85%;
-   margin: auto;
-   opacity: 0.9;
-}
+
 
 blockquote {
 	display: block;

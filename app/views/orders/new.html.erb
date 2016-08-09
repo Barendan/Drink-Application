@@ -65,12 +65,12 @@
 			    </thead>
 
 			    <tbody>
-			      <% @productArr.each do |product| %>
-			        <tr>
+			      	<% @productArr.each do |product| %>
+			        <tr class="js-bottle 1"  data-name="<%=product.name%>" data-size="<%=product.size%>" data-price="<%=product.price %>">
 			          <td id="itemTable"> <%= product.name %> </td>
-			          <td id="itemTable"> <%= product.size %> </td>
+			          <td id="itemTable" > <%= product.size %> </td>
 			          <td id="itemTable"> <center> - 1 + </center></td>
-			          <td id="itemTable"> $<%= product.price %> </td>
+			          <td id="itemTable" > $<%= product.price %> </td>
 			          <td id="itemTable"> <%= product.type.name %> </td>
 			        </tr>
 			      <% end %>
@@ -108,30 +108,16 @@
 			S<br>U<br>M<br>M<br>A<br>R<br>Y
 		</p>
 		<div class="holder">
-			<b class="biggie"><center> Your Order Summary: </center></b>
+			<h2><center> Your Order Summary: </center></h2>
 			<br>
-			<!-- <table> -->
+			<strong>
+			<table id="reviewTable">
 				<tbody>
-			        <tr>
-			          <td> 1 x &nbsp;&nbsp;</td>
-			          <td> Johnnie Walker Black Label &nbsp;&nbsp; </td>
-			          <td> 1.75L&nbsp;&nbsp; </td>
-			          <td> $29.99 &nbsp;&nbsp;</td>
-			        </tr><br>
-			         <tr>
-			          <td> 1 x &nbsp;&nbsp;</td>
-			          <td> Captain Morgan Spiced Rum &nbsp;&nbsp; </td>
-			          <td> 1.75L&nbsp;&nbsp; </td>
-			          <td> $20.99 &nbsp;&nbsp;</td>
-			        </tr><br>
-			        <tr>
-			          <td> 2 x &nbsp;&nbsp;</td>
-			          <td> Absolut Vodka &nbsp;&nbsp; </td>
-			          <td> 1.75L&nbsp;&nbsp; </td>
-			          <td> $31.95 &nbsp;&nbsp;</td>
-			        </tr>
 			    </tbody>
-			<!-- </table> -->
+			</table>
+			</strong>
+
+
 			<br><br>
 			<i>To complete your order, please input the following:</i><br>
 			<form action="/users/<%= current_user.id %>/orders" method="POST">

@@ -16,8 +16,9 @@ $(document).on("turbolinks:load", function () {
 	$('.js-mapPanel').click( function () {
     function refreshMap () {
       google.maps.event.trigger(map, 'resize');
-      map.fitBounds(bounds);
-      // Set center in here
+      // map.setCenter({lat: 25.7712513, lng: -80.1918728});
+      // map.setZoom(14);
+      // map.fitBounds(bounds);
     };
     $('.js-mapPanel').animate({width:'90%', left:'5%'}, refreshMap);
     $('.js-mapPanel').removeClass('closed');
@@ -197,22 +198,26 @@ $(document).on("turbolinks:load", function () {
 
   
   var startLoc = new Array();
-  startLoc[0] = 'aventura, Miami';
-  startLoc[1] = 'kendall, Miami';
+  startLoc[0] = 'bayshore, Miami';
+  startLoc[1] = 'Miami International Airport, Miami';
   startLoc[2] = 'coconut grove, Miami';
-  startLoc[3] = 'brickell, Miami';
-  startLoc[4] = 'north Miami, Florida';
+  startLoc[3] = 'little haiti, Miami';
+  startLoc[4] = 'Mid-Beach, Miami';
+  startLoc[5] = 'downtown, Miami';
 
   var endLoc = new Array();
-  endLoc[0] = 'North Miami, Florida';
+  endLoc[0] = 'Wynwood, Miami';
   endLoc[1] = 'brickell, Miami';
-  endLoc[2] = 'brickell, Miami';
-  endLoc[3] = 'south beach, Miami';
-  endLoc[4] = 'miami Beach, Florida';
+  endLoc[2] = 'Wynwood, Miami';
+  endLoc[3] = 'brickell, Miami';
+  endLoc[4] = 'south beach, Miami';
+  endLoc[5] = 'Allapattah, Miami';
 
 
   var Colors = ["#FF0000", "#00FF00", "#0000FF"];
-  var DriverArr = ["Nizar", "Josh", "Alia", "Nick"];
+  var DriverArr = ["Nizar", "Josh", "Devorah", "Gabe", 
+                   "Nick", "Jumbo", "Mark", "Billy",
+                   "Dr. Johnson", "Arnold", "Sammy"];
   // var Driver = DriverArr[Math.floor(Math.random() * DriverArr.length)];
 
 
@@ -229,16 +234,16 @@ $(document).on("turbolinks:load", function () {
       });
 
       var myOptions = {
-        zoom: 16,
+        zoom: 13,
+        center: {lat: 25.795865, lng: -80.27496050000002},
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
 
       map = new google.maps.Map(document.getElementById("map"), myOptions);
-      address = 'Downtown Miami'
+      address = 'Miami'
       geocoder = new google.maps.Geocoder();
       geocoder.geocode( { 'address': address}, function(results, status) {
-       map.fitBounds(results[0].geometry.viewport);
-
+        // map.fitBounds(results[0].geometry.viewport);
       }); 
     setRoutes();
     } 
@@ -316,13 +321,13 @@ $(document).on("turbolinks:load", function () {
           polyline[routeNum] = new google.maps.Polyline({
           path: [],
           strokeColor: '#FFF',
-          strokeWeight: 3
+          strokeWeight: 0
           });
 
           poly2[routeNum] = new google.maps.Polyline({
           path: [],
           strokeColor: '#000',
-          strokeWeight: 3
+          strokeWeight: 0
           });     
 
 
@@ -373,7 +378,7 @@ $(document).on("turbolinks:load", function () {
 
       var lastVertex = 1;
       var stepnum=0;
-      var step = 10; // 5; // metres
+      var step = 5; // 5; // metres
       var tick = 100; // milliseconds
       var eol= [];
   //----------------------------------------------------------------------                
@@ -431,7 +436,7 @@ $(document).on("turbolinks:load", function () {
           function start () {
             animate(index,50)
           }
-          timerHandle[index] = setTimeout(start,3000);  // Allow time for the initial map display
+          timerHandle[index] = setTimeout(start,2000);  // Allow time for the initial map display
   }  
 
 // Flashing Title; Went with CSS only version of this
@@ -440,6 +445,27 @@ $(document).on("turbolinks:load", function () {
 // 	setInterval(function() {
 //    	flashBaby.toggleClass('blinking');
 // 	}, 700);
+  var quantity = 1;
+
+  $( ".1" ).on( "click", function() {
+      var name = $(this).data('name');
+      var size = $(this).data('size');
+      var price = $(this).attr('data-price');
+      var s = "&nbsp;&nbsp;&nbsp;";
+
+      var table = document.getElementById("reviewTable");
+      var row = table.insertRow(0);
+      // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+
+      cell1.innerHTML = "1 x " + s;
+      cell2.innerHTML = s+ name;
+      cell3.innerHTML = s+ size;
+      cell4.innerHTML = s+ "$" + price;
+  });
 
 
 })
