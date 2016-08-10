@@ -117,11 +117,14 @@
 	// border-width: 2px;
 	// border-color: black;
 }
+.sortable {
+	border: 4px solid #FFF;
+}
 #sortTable {
-	background-color: #966F33;
-	border-top: 4px solid #966F33;
+	background-color: #000;
+	// border-top: 4px solid #966F33;
     border-bottom: 1px solid #fff;
-    color: #000;
+    color: #FFF;
     padding: 8px 12px;
 }
 #itemTable {

@@ -101,26 +101,6 @@
 			</table>
 
 
-			<table class="productTable2 sortable" id="rowHover">
-			    <thead>
-			      <tr>
-			        <th id="sortTable"> Product Name </th>
-			        <th id="sortTable"> Quantity </th>
-			        <th id="sortTable"> Price </th>
-			      </tr>
-			    </thead>
-
-			    <tbody>
-			      <% @productArr[10..20].each do |product| %>
-			        <tr>
-			          <td id="itemTable"> <center><%= product.name %> </center></td>
-			          <td id="itemTable"> <center> - 1 + </center></td>
-			          <td id="itemTable"> $<%= product.price %> </td>
-			        </tr>
-			      <% end %>
-			    </tbody>
-			</table>
-
 		</div>
 	</div>
 
