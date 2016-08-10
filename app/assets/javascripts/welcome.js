@@ -448,8 +448,10 @@ $(document).on("turbolinks:load", function () {
   var quantity = 1;
 
   $( ".1" ).on( "click", function() {
+
       var name = $(this).data('name');
       var size = $(this).data('size');
+      // .attr does the same thing as .data 
       var price = $(this).attr('data-price');
       var s = "&nbsp;&nbsp;&nbsp;";
 

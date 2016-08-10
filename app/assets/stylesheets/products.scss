@@ -44,7 +44,7 @@
 .showMap {
 	height: 100%;
 	text-align: center;
-	
+
 }
 .highlight {
 	background-color: white;
@@ -161,8 +161,16 @@
 #rowHover tr:hover td {
 	background: #966F33;
     color: #000;
+    cursor: pointer;
 }
-
+#rowHover tr:hover td:active {
+	// background-color: black;
+	background: #966F33;
+    color: #000;
+    border-style: inset;
+	box-shadow: 3px 3px 10px #000;
+	animation: blinkBtn 1s linear;
+}
 
 
 
