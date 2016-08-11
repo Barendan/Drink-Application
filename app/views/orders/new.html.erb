@@ -53,46 +53,25 @@
 						<% end %>
 					</ul>
 
-			<table class="productTable1 sortable" id="rowHover">
+			<table class="productTable2 sortable" id="rowHover">
 			    <thead>
 			      <tr>
-			        <th id="sortTable"> Product Name </th>
-			        <th id="sortTable"> Size </th>
-			        <th id="sortTable"> Quantity </th>
-			        <th id="sortTable"> Price </th>
-			        <th id="sortTable"> Type </th>
+			        <th class="sortTable first"> <center>Product Name </center></th>
+			        <th class="sortTable width"> <center> Size </center> </th>
+			        <th class="sortTable width"> <center> Quantity </center></th>
+			        <th class="sortTable width"> Price  </th>
+			        <th class="sortTable last"> Type </th>
 			      </tr>
 			    </thead>
 
 			    <tbody>
 			      	<% @productArr.each do |product| %>
 			        <tr class="js-bottle 1"  data-name="<%=product.name%>" data-size="<%=product.size%>" data-price="<%=product.price %>">
-			          <td id="itemTable"> <%= product.name %> </td>
-			          <td id="itemTable" > <%= product.size %> </td>
-			          <td id="itemTable"> <center> - 1 + </center></td>
-			          <td id="itemTable" > $<%= product.price %> </td>
-			          <td id="itemTable"> <%= product.type.name %> </td>
-			        </tr>
-			      <% end %>
-			    </tbody>
-			</table>
-
-
-			<table class="productTable2 sortable" id="rowHover">
-			    <thead>
-			      <tr>
-			        <th id="sortTable"> Product Name </th>
-			        <th id="sortTable"> Quantity </th>
-			        <th id="sortTable"> Price </th>
-			      </tr>
-			    </thead>
-
-			    <tbody>
-			      <% @productArr[10..20].each do |product| %>
-			        <tr>
-			          <td id="itemTable"> <center><%= product.name %> </center></td>
-			          <td id="itemTable"> <center> - 1 + </center></td>
-			          <td id="itemTable"> $<%= product.price %> </td>
+			          <td class="itemTable itemFirst"> <center><%= product.name %> </center></td>
+			          <td class="itemTable itemWidth"> <center> <%= product.size %> </center></td>
+			          <td class="itemTable itemWidth"> <center> - 1 + </center></td>
+			          <td class="itemTable itemWidth"> <center>$<%= product.price %> </center></td>
+			          <td class="itemTable itemWidth"> <center> <%= product.type.name %> </center></td>
 			        </tr>
 			      <% end %>
 			    </tbody>
