@@ -474,9 +474,11 @@ $(document).on("turbolinks:load", function () {
 
       priceInt = parseFloat(price);
       total += priceInt;
-      showTotal = s+s+s+s+'Your Total is' +s+ '$' + total;
+      totalFixed = total.toFixed(2);
 
-      $('#splitta').html(showTotal);
+      showTotal = s+s+s+s+'Your Total is' +s+ '$' + totalFixed;
+
+      $('#totalRecall').html(showTotal);
 
   });
 
