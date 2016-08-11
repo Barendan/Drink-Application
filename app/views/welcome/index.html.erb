@@ -68,7 +68,6 @@
 		</p>
 		<div class="menu">
 			<h2 class="highlight">Alcohol Menu</h2>
-		
 
 					<ul id="btnList"> 
 						<% @typeArr[0..8].each do |type| %>
@@ -76,29 +75,31 @@
 						<% end %>
 					</ul>
 
-			<table class="sortable" id="rowHover">
+			<div class="scroll">
+			<table class="productTable2 sortable">
 			    <thead>
 			      <tr>
-			        <th id="sortTable"> Product Name </th>
-			        <th id="sortTable"> Size </th>
-			        <th id="sortTable"> Quantity </th>
-			        <th id="sortTable"> Price </th>
-			        <th id="sortTable"> Type </th>
+			        <th id="psortTable"> <center>Product Name </center></th>
+			        <th id="sortTable"> <center> Size </center> </th>
+			        <th id="sortTable"> <center> Quantity </center></th>
+			        <th id="sortTable"> <center> Price </center> </th>
+			        <th id="sortTable"> <center> Type </center></th>
 			      </tr>
 			    </thead>
 
 			    <tbody>
 			      <% @productArr.each do |product| %>
-			        <tr class="js-bottle">
-			          <td id="itemTable" class="1" data-name="<%=product.name%>"> <%= product.name %> </td>
-			          <td id="itemTable" class="2" data-size="<%=product.size%>"> <%= product.size %> </td>
+			        <tr>
+			          <td id="pitemTable"> <center><%= product.name %> </center></td>
+			          <td id="itemTable"> <center> <%= product.size %> </center></td>
 			          <td id="itemTable"> <center> - 1 + </center></td>
-			          <td id="itemTable" class="3" data-price="<%=product.price%>"> $<%= product.price %> </td>
-			          <td id="itemTable"> <%= product.type.name %> </td>
+			          <td id="itemTable"> <center>$<%= product.price %> </center></td>
+			          <td id="itemTable"> <center> <%= product.type.name %> </center></td>
 			        </tr>
 			      <% end %>
 			    </tbody>
 			</table>
+			</div>
 
 
 		</div>
