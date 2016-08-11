@@ -64,7 +64,7 @@
 			      </tr>
 			    </thead>
 
-			    <tbody>
+			    <tbody class= "body">
 			      	<% @productArr.each do |product| %>
 			        <tr class="js-bottle 1"  data-name="<%=product.name%>" data-size="<%=product.size%>" data-price="<%=product.price %>">
 			          <td class="itemTable itemFirst"> <center><%= product.name %> </center></td>
@@ -89,12 +89,20 @@
 		<div class="holder">
 			<h2><center> Your Order Summary: </center></h2>
 			<br>
-			<strong>
+
+			<i>
 			<table id="reviewTable">
 				<tbody>
 			    </tbody>
 			</table>
+			</i>
+
+			<strong>
+			________________________________________________________<br>
+			<h2 id="splitta">
+			</h2>
 			</strong>
+
 
 
 			<br><br>

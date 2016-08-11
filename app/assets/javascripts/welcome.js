@@ -446,8 +446,11 @@ $(document).on("turbolinks:load", function () {
 //    	flashBaby.toggleClass('blinking');
 // 	}, 700);
   var quantity = 1;
+  var total = 0;
 
+  $('.holder table').hide();
   $( ".1" ).on( "click", function() {
+      $('.holder table').show();
 
       var name = $(this).data('name');
       var size = $(this).data('size');
@@ -456,6 +459,7 @@ $(document).on("turbolinks:load", function () {
       var s = "&nbsp;&nbsp;&nbsp;";
 
       var table = document.getElementById("reviewTable");
+
       var row = table.insertRow(0);
       // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
       var cell1 = row.insertCell(0);
@@ -465,11 +469,20 @@ $(document).on("turbolinks:load", function () {
 
       cell1.innerHTML = "1 x " + s;
       cell2.innerHTML = s+ name;
-      cell3.innerHTML = s+ size;
-      cell4.innerHTML = s+ "$" + price;
+      cell3.innerHTML = s+s+ size;
+      cell4.innerHTML = s+s+s+ "$" + price;
+
+      priceInt = parseFloat(price);
+      total += priceInt;
+      showTotal = s+s+s+s+'Your Total is' +s+ '$' + total;
+
+      $('#splitta').html(showTotal);
+
   });
 
 
-  
+
+
+
 
 })
