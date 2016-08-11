@@ -227,29 +227,29 @@ tbody {
 .js-mapOrder {
 	// background: url("carB.jpg") no-repeat center center fixed;
 	position: absolute;
-	top: 90px;
+	top: 86px;
 	left: 0px;
 	width: 90%;
 	height: 90%;
-	border: dashed;
-	border-width: 2px;
-	border-color: white;
+	// border: dashed;
+	// border-width: 2px;
+	// border-color: white;
 	// color: white;
 	text-align: center;
-	z-index: -1;
+	// z-index: -1;
 }
 // Product display panel
 .js-product {
 	background: url("store_home1.jpg") no-repeat center center fixed;
 	position: absolute;
-	top: 90px;
+	top: 86px;
 	right: 5%;
 	width: 5%;
 	height: 100%;
-	border: dashed;
-	border-width: 2px;
-	border-color: white;
-	z-index: 1;
+	// border: dashed;
+	// border-width: 2px;
+	// border-color: white;
+	// z-index: 1;
 }
 
 // Review display panel
@@ -260,14 +260,14 @@ tbody {
     -moz-background-size: cover;
     -o-background-size: cover;
 	position: absolute;
-	top: 90px;
+	top: 86px;
 	right: 0%;
 	width: 5%;
 	height: 100%;
-	border: dashed;
-	border-width: 2px;
-	border-color: white;
-	z-index: 10;
+	// border: dashed;
+	// border-width: 2px;
+	// border-color: white;
+	// z-index: 10;
 }
 
 
