@@ -4,6 +4,15 @@ class OrdersController < ApplicationController
 
 	# Show individual order details
 	def show
+		@user = current_user
+		reinforce = [
+			"You made a good choice,",
+			"You'll be drinking in no time,",
+			"Enjoy your drinks,",
+			"Celebrate all the good times,",
+			"Down the hole it goes,",
+		]
+		@reinforce = reinforce.sample
 	end
 
 	# Request order form
@@ -12,7 +21,7 @@ class OrdersController < ApplicationController
 		@order = Order.new
     	@productArr = Product.all
     	@typeArr = Type.all
-    	# @userOrders = @user.orders.all
+    	@userOrders = @user.orders.all
 
 		greetings = [
 			"It's 5 o'clock somewhere,",
@@ -32,16 +41,16 @@ class OrdersController < ApplicationController
 	def create
 		@order = Order.new(
     		:user_id => current_user.id,
-			:driver_id => params[:order][:driver_id],
+			:driver_id => 3,
 			:address => params[:order][:address],
-			:status_id => "Accepted",
 			:scheduled_for => Time.now,
+			:status_id => "Accepted",
 			)
 		if @order.save
 			@product_order = ProductOrder.new(
-				:quantity => params[:product_order][:quantity],
 				:product_id => params[:product_order][:product_id],
-				:order_id => @order.id)
+				:order_id => @order.id,
+				:quantity => params[:product_order][:quantity])
 			@product_order.save
 			redirect_to("/users/#{@current_user.id}/orders/#{@order.id}")
     	else 

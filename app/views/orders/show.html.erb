@@ -1,23 +1,36 @@
 <div class="backSet">
 
 	<div class="navBar">
-		<b class="title">&nbsp;FireWater</b>
-		<span class="underText">
-		<%= @randomGreet %> <%= @user.first_name %>
+		<b class="title">&nbsp;<a href="/home">FireWater</a></b>
+		<span class="slogan">
+		<%= @reinforce %> <%= @user.first_name %>.
 		</span>
 
 		<div class="navRight">
 			<a href="/users/<%= @current_user.id %>">
-			    <button class="navLinks">
+			    <button class="btn btn-1 btn-1e">
 			     My Account
 			    </button></a>&nbsp;&nbsp;&nbsp;
 
 				<%= link_to(destroy_user_session_path, method: :delete) do %>
-					<button class="navLinks">
-						Logout
-					</button>
+				<button class="btn btn-1 btn-1e">
+					Logout
+				</button>
 				<% end %>	
 		</div>
 	</div>
-
+	<div class="js-about">
+		<div class="holder">
+			Order #<%= @order.id %> : was succesful.<br>
+			Order Status : Accepted .
+		</div>
+	</div>
 </div>
+
+
+
+<!-- This page should contain:
+Map for Tracking the Driver
+Order Status being updated based on Driver
+Order Summary of what the purchase was and how much was paid
+Maybe an ETA? -->

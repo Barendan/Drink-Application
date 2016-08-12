@@ -34,29 +34,27 @@
 	border-style: solid solid double solid;
 }
 .navRight {
-	display: inline;
-	position: absolute;
-	right: 50px;
-	top: 20px;
+	float: right;
+	padding: 15px 35px 0px 0px;
 }
 
-.navLinks {
-	background-color: transparent;
-	height: 45px;
-	width: 100px;
-	color: white;
-	border-radius: 5px;
-	border-width: 3px;
-	border-color: #FFF;
-	// border-style: outset;
-}
-.navLinks:hover {
-	background-color: black;
-	border-style: inset;
-	// border-color: red;
-	// color: red !important;
-	// opacity: 0.5;
-}
+// .navLinks {
+// 	// background-color: transparent;
+// 	height: 45px;
+// 	width: 100px;
+// 	// color: white;
+// 	border-radius: 5px;
+// 	border-width: 2px;
+// 	border-color: #000;
+// 	border-style: solid;
+// }
+// .navLinks:hover {
+// 	background-color: black;
+// 	border-style: inset;
+// 	// border-color: red;
+// 	// color: red !important;
+// 	// opacity: 0.5;
+// }
 
 
 .panelName1,
@@ -203,7 +201,10 @@ body {
 a {
 	font-weight: bold;
 	color: #CA0008;
-	// text-decoration: none;
+	text-decoration: none;
+}
+.showThis {
+	display: table;
 }
 
 

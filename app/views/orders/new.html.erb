@@ -2,19 +2,19 @@
 <div class="backSet">
 
 	<div class="navBar">
-		<b class="title">&nbsp;FireWater</b>
+		<b class="title">&nbsp;<a href="home">FireWater</a></b>
 		<span class="slogan">
 		<%= @randomGreet %> <%= @user.first_name %>.
 		</span>
 
 		<div class="navRight">
 			<a href="/users/<%= @current_user.id %>">
-			    <button class="navLinks">
+			    <button class="btn btn-1 btn-1e">
 			     My Account
 			    </button></a>&nbsp;&nbsp;&nbsp;
 
 				<%= link_to(destroy_user_session_path, method: :delete) do %>
-				<button class="navLinks">
+				<button class="btn btn-1 btn-1e">
 					Logout
 				</button>
 				<% end %>	
@@ -29,9 +29,27 @@
 		
 			<div class="holder">
 				<h2>Your Order History:</h2>
+
+				<table>
+				<tbody>
+				  	<% if @userOrders.length != 0 %>
+				  	<%	@userOrders.each do |order| %>
+				  <tr> 
+				  	<td> <%= order.created_at %> </td>
+				  	<td> Status: Order Received </td>
+				  	<td> <%= order.products.all %> </td>
+				    <% end %> 
+				    <% else %> 
+				    <%= p "You currently have no order history. Click on the Products Panel to get started!" %>
+				  </tr>
+				  <% end %>
+				</tbody>
+				</table>
+
 				<% if 1 == 1 %>
-				<%= p "You currently have no order history. Click on the Products Panel to get started!" %>
+				
 				<% end %>
+
 			</div>
 
 		
@@ -66,7 +84,7 @@
 
 			    <tbody class= "body">
 			      	<% @productArr.each do |product| %>
-			        <tr class="js-bottle 1"  data-name="<%=product.name%>" data-size="<%=product.size%>" data-price="<%=product.price %>">
+			        <tr class="js-bottle 1" data-id="<%= product.id %>" data-name="<%=product.name%>" data-size="<%=product.size%>" data-price="<%=product.price %>">
 			          <td class="itemTable itemFirst"> <center><%= product.name %> </center></td>
 			          <td class="itemTable itemWidth"> <center> <%= product.size %> </center></td>
 			          <td class="itemTable itemWidth"> <center> - 1 + </center></td>
@@ -118,14 +136,16 @@
 			    <input type="number" name="product_order[quantity]" id="quantity">
 			  </div>
 
-			   <input type='hidden' name="order[driver_id]" class="js-orderDriver">
-
-			    <input type='hidden' name="product_order[product_id]" class="js-productID">
-
+			  <!-- <input type='hidden' name="order[user_id]" class="js-orderUser"> -->
+			  <!-- <input type='hidden' name="order[driver_id]" class="js-orderDriver"> -->
+			  <!-- <input type='hidden' name="order[scheduled_for]" class="js-orderSchedule"> -->
+			  <!-- <input type='hidden' name="order[status_id]" class="js-orderStatus"> -->
+			  <!-- <input type='hidden' name="product_order[order_id]" class="js-pOrderId"> -->
+			  <!-- <input type='hidden' name="product_order[quantity]" class="js-pQuantity"> -->
 			  <input type='hidden' name='authenticity_token'
 			      value='<%= form_authenticity_token %>'>
 
-			  <button type="submit">Place Your Order</button>
+			  <button type="submit"> Place Your Order </button>
 
 			</form>
 	</div>

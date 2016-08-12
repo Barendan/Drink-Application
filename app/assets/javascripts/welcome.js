@@ -448,14 +448,15 @@ $(document).on("turbolinks:load", function () {
   var quantity = 1;
   var total = 0;
 
-  $('.holder table').hide();
+  $('.holder #reviewTable').hide();
   $( ".1" ).on( "click", function() {
-      $('.holder table').show();
+      $('.holder #reviewTable').show();
 
       var name = $(this).data('name');
       var size = $(this).data('size');
       // .attr does the same thing as .data 
       var price = $(this).attr('data-price');
+      var id = $(this).data('id');
       var s = "&nbsp;&nbsp;&nbsp;";
 
       var table = document.getElementById("reviewTable");
@@ -480,9 +481,13 @@ $(document).on("turbolinks:load", function () {
 
       $('#totalRecall').html(showTotal);
 
+      var productOrder = `
+        <input type='hidden' name="product_order[product_id][]" 
+          class="js-pProductID" value="${id}">
+        `
+
+      $('form').append(productOrder);
   });
-
-
 
 
 

@@ -28,8 +28,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   
-  has_many :product_orders
-  has_many :orders, through: "product_orders"
+  has_many :orders
   has_many :messages
 
 end
