@@ -31,13 +31,22 @@
 				<h2>Your Order History:</h2>
 
 				<table>
+<!-- 				<thead>
+					<tr>
+						<th> Date Created </th>
+						<th> Order Status </th>
+						<th> Products </th>
+					</tr>
+				</thead> -->
 				<tbody>
 				  	<% if @userOrders.length != 0 %>
 				  	<%	@userOrders.each do |order| %>
 				  <tr> 
-				  	<td> <%= order.created_at %> </td>
-				  	<td> Status: Order Received </td>
-				  	<td> <%= order.products.all %> </td>
+				  	<td> <%= order.created_at.to_formatted_s(:short) %> &nbsp;&nbsp;&nbsp;</td>
+				  	<td> Status:<br> Order Received &nbsp;&nbsp;&nbsp;</td>
+					  	<%# order.products.each do |product| %>
+					  	<td> <%= order.products.all %> </td>
+					    
 				    <% end %> 
 				    <% else %> 
 				    <%= p "You currently have no order history. Click on the Products Panel to get started!" %>
