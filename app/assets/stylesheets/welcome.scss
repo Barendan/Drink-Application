@@ -69,8 +69,20 @@
 	font-size: 300%;
 	overflow: hidden;
 }
+blockquote {
+	font-size: 30%;
+}
+.overlay blockquote {
+	display: none;
+}
 .overlay:hover {
 	background-color: transparent;
+}
+.overlay:hover blockquote {
+	display: block;
+}
+.overlay:hover p {
+	display: none;
 }
 
 .backSet {
@@ -106,7 +118,10 @@
 	width: 100%;
 	height: 70px;
 	padding: 5px;
-	border-style: solid solid double solid;
+	border: 0;
+	border-bottom: 2px;
+	border-style: double;
+	border-color: white;
 }
 .navRight {
 	float: right;
