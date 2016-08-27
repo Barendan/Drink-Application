@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :driver_license, presence: true, uniqueness: true
+  validates :driver_license, presence: false, uniqueness: true
   # not too sure about this v
   validates_attachment :license_pic,
 	:content_type => { 
@@ -14,10 +14,10 @@ class User < ApplicationRecord
 		:in => 0..5.megabytes, 
 		:message => "License image must be less than 5 megabytes in size" }
   
-  validates :address, presence: true
-  validates :phone, presence: true, uniqueness: true, 
-    format: { with: /(\+1 )?\(?[0-9]{3}\)? ?-?[0-9]{3}? ?-?[0-9]{4}/}
-  # Does Devise already check format for email?
+  validates :address, presence: false
+  # validates :phone, presence: true, uniqueness: true
+  # format: { with: /(\+1 )?\(?[0-9]{3}\)? ?-?[0-9]{3}? ?-?[0-9]{4}/}
+
   # validates :email, presence: true, uniqueness: true,   
   #   format: { with: /^\w+@\w+\.[A-Za-z]+$/ }
   validates :birthday, presence: true
