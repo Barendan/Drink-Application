@@ -6,7 +6,23 @@ $(document).on("turbolinks:load", function () {
   // $('#sortTable').click( function() {
   //   $(this).
   // });
+  $(".one").hover(bigger,normal);
+    // alert("Fuck you");
+    function bigger() {
+    $(".rightTop").animate({width: "49%"});
+    };
+    function normal() {
+    $(".rightTop").animate({width: "29.27%"});
+    };
 
+
+  $(".two").hover(bigg, norm);
+        function bigg() {
+    $(".rightBottom").animate({width: "49%"});
+    };
+    function norm() {
+    $(".rightBottom").animate({width: "29.27%"});
+    };
 
 
   $('.panelName1').hide();
